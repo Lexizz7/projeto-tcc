@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://modwmpakakol"]
+
+[ext_resource type="Texture2D" uid="uid://b6cpf8uiqy8gk" path="res://levels/farm/assets/farm.png" id="1_qam4g"]
+[ext_resource type="Script" uid="uid://cg21cxyr287qs" path="res://levels/farm/house.gd" id="2_kobh8"]
+[ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="3_p0y0h"]
+[ext_resource type="Script" uid="uid://bmpr88un5l47s" path="res://levels/farm/barn.gd" id="4_1jhwj"]
+[ext_resource type="Script" uid="uid://cthcbxkch15ke" path="res://levels/farm/chickencoop.gd" id="5_botmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wvic"]
+size = Vector2(64.9439, 131.3)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jhwj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_botmr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1jhwj"]
+vertices = PackedVector2Array(757.156, 475.156, 853.773, 456.227, 950.273, 479.273, 802.633, 525.258, 727.602, 538.438, 590.844, 342.758, 635.039, 352.312, 602.961, 366.641, 348.453, 442.023, 302.227, 406.18, 289.047, 394.953, 328.883, 381.898, 358.656, 380.094, 393.492, 391.703, 415.891, 415.078, 608.602, 646.031, 424.367, 646.93, 424.688, 645.859, 460.711, 617.219, 508.031, 588.633, 563.227, 558.438, 625.672, 609.18, 584.406, 522.297, 667.719, 460.602, 656.906, 577.953, 462.289, 443.008, 455.148, 435.93, 524.094, 458.719, 483.672, 412.844, 588.289, 409.297, 617.383, 433.328, 565.68, 486.078, 490.602, 390.062, 522.43, 366.422, 572.508, 338.594)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19, 20, 21), PackedInt32Array(22, 23, 0, 4, 24, 20), PackedInt32Array(25, 8, 14, 26), PackedInt32Array(27, 25, 26, 28, 29), PackedInt32Array(24, 21, 20), PackedInt32Array(30, 23, 22, 31), PackedInt32Array(29, 30, 31, 27), PackedInt32Array(7, 29, 28, 32, 33, 34, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(345, 452, 461, 453, 520, 468, 558, 493, 573, 522, 556, 551, 503, 580, 455, 609, 416, 640, 411, 657, 615, 656, 634, 615, 663, 586, 731, 548, 805, 535, 988, 478, 854, 446, 757, 465, 671, 451, 623, 425, 600, 406, 611, 374, 667, 349, 593, 333, 571, 328, 517, 358, 482, 384, 479, 414, 455, 423, 422, 407, 399, 383, 360, 370, 327, 372, 269, 391, 296, 414)])
+
+[node name="Farm" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+scale = Vector2(0.759766, 0.640625)
+texture = ExtResource("1_qam4g")
+centered = false
+
+[node name="House" type="Area2D" parent="."]
+position = Vector2(313, 320)
+scale = Vector2(6.2, 3.08)
+script = ExtResource("2_kobh8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
+position = Vector2(-14.1935, -34.0909)
+shape = SubResource("RectangleShape2D_2wvic")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_p0y0h")]
+position = Vector2(608, 517)
+
+[node name="Barn" type="Area2D" parent="."]
+position = Vector2(603, 282)
+scale = Vector2(38.44, 9.4864)
+script = ExtResource("4_1jhwj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barn"]
+position = Vector2(2.26327, -9.80351)
+scale = Vector2(0.545715, -1.23223)
+shape = SubResource("CapsuleShape2D_1jhwj")
+metadata/_edit_lock_ = true
+
+[node name="ChickenCoop" type="Area2D" parent="."]
+position = Vector2(887, 461)
+script = ExtResource("5_botmr")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenCoop"]
+position = Vector2(78, -60)
+rotation = -0.557887
+scale = Vector2(15.4452, -8.68644)
+shape = SubResource("CapsuleShape2D_botmr")
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1jhwj")
+
+[connection signal="input_event" from="House" to="House" method="_on_input_event"]
+[connection signal="input_event" from="Barn" to="Barn" method="_on_input_event"]
+[connection signal="input_event" from="ChickenCoop" to="ChickenCoop" method="_on_input_event"]
