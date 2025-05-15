@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv6bnceededeb"]
+
+[ext_resource type="Texture2D" uid="uid://64y6x8wjg43c" path="res://levels/chicken_coop/assets/chicken_coop.png" id="1_rhhhj"]
+[ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="2_h8uxh"]
+
+[node name="ChickenCoop" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+position = Vector2(1.5, 4.5)
+scale = Vector2(0.753255, 0.643555)
+texture = ExtResource("1_rhhhj")
+
+[node name="Player" parent="." instance=ExtResource("2_h8uxh")]
+position = Vector2(353, 304)
+scale = Vector2(2.5, 2.5)
