@@ -1,35 +1,33 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv6bnceededeb"]
 
-[ext_resource type="Texture2D" uid="uid://64y6x8wjg43c" path="res://levels/chicken_coop/assets/chicken_coop.png" id="1_rhhhj"]
+[ext_resource type="Texture2D" uid="uid://b74pkl6k6xgox" path="res://levels/chicken_coop/assets/chicken_coop.png" id="1_rhhhj"]
 [ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="2_h8uxh"]
 [ext_resource type="PackedScene" uid="uid://filj2464bwfm" path="res://utilities/scenes/PlayerTransitionArea.tscn" id="3_sgdh1"]
-[ext_resource type="Texture2D" uid="uid://b6aa01ixf8onh" path="res://levels/chicken_coop/assets/boxes.png" id="4_yomyl"]
+[ext_resource type="Texture2D" uid="uid://spgpslvksa8p" path="res://levels/chicken_coop/assets/boxes.png" id="4_yomyl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1gxe2"]
-vertices = PackedVector2Array(-276.797, 293, -276.633, 293.008, -437.508, 287.117, 163.539, 270.938, 298.742, 235.141, 350.312, 240.938, 304.047, 262.328, 147.961, 287.031, -496.367, 243.156, -452.273, 233.711, -416.938, 259.5, -330.781, 273, -123.891, 295.992, -231.359, 273, -125.219, 280.008, -19.3125, 295, 59.3516, 275.992)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(2, 8, 9, 10), PackedInt32Array(0, 2, 10, 11), PackedInt32Array(12, 0, 11, 13, 14, 15), PackedInt32Array(16, 3, 7, 15), PackedInt32Array(14, 16, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-520, 238, -441, 297, -277, 303, -124, 306, -19, 305, 149, 297, 307, 272, 387, 235, 298, 225, 162, 261, 59, 266, -125, 270, -231, 263, -330, 263, -413, 250, -450, 223)])
+vertices = PackedVector2Array(-47.2734, 265, -47.0938, 265, -154.82, 265.992, 91.0313, 235.961, 184.367, 222.188, 232.703, 235.461, 250.773, 242.852, 228.023, 250.133, 100.563, 261, -373.258, 249.367, -405.359, 226.438, -335.508, 198.203, -317.578, 222.961, -286.117, 260.023, -281.719, 239.773, -184.328, 250.023, -78.5078, 245.992)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8, 0), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 9, 12, 14), PackedInt32Array(2, 13, 14, 15), PackedInt32Array(2, 15, 16, 0), PackedInt32Array(0, 16, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-426, 224, -377, 259, -287, 270, -155, 276, -47, 275, 101, 271, 230, 260, 280, 244, 236, 226, 185, 212, 90, 226, -79, 236, -184, 240, -279, 230, -311, 215, -332, 186)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gxe2"]
 size = Vector2(235, 414)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjqwc"]
-size = Vector2(239, 188)
+size = Vector2(378, 267)
 
 [node name="ChickenCoop" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(1.5, 4.5)
-scale = Vector2(0.753255, 0.643555)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-0.999977, -1.00003)
+scale = Vector2(0.602083, 0.603704)
 texture = ExtResource("1_rhhhj")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_1gxe2")
 
 [node name="Door" parent="." instance=ExtResource("3_sgdh1")]
-position = Vector2(-455, 1)
+position = Vector2(-394, -11)
 scenePath = "res://levels/farm/farm.tscn"
 metadata/_edit_group_ = true
 
@@ -39,22 +37,29 @@ shape = SubResource("RectangleShape2D_1gxe2")
 metadata/_edit_lock_ = true
 
 [node name="Boxes" parent="." instance=ExtResource("3_sgdh1")]
-position = Vector2(430, 165)
+position = Vector2(379, 154)
 scenePath = "res://levels/chicken_coop/Game1E/Game1E.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boxes"]
-position = Vector2(-16.5, -1)
+position = Vector2(-86, -40.5)
+shape = SubResource("RectangleShape2D_kjqwc")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boxes"]
+position = Vector2(-86, -40.5)
 shape = SubResource("RectangleShape2D_kjqwc")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Boxes"]
-scale = Vector2(0.206055, 0.206055)
+position = Vector2(-89, -34)
+scale = Vector2(0.519488, 0.519488)
 texture = ExtResource("4_yomyl")
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_h8uxh")]
-position = Vector2(-374, 277)
+position = Vector2(-285, 245)
 scale = Vector2(2.5, 2.5)
 speed = 800.0
 initialPosition = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

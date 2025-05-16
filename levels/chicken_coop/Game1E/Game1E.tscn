@@ -1,18 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciq5rsuvk0t72"]
+[gd_scene load_steps=7 format=3 uid="uid://ciq5rsuvk0t72"]
 
-[ext_resource type="Texture2D" uid="uid://dk32l14nbqo6n" path="res://levels/chicken_coop/Game1E/assets/game1e_background.png" id="1_10xga"]
 [ext_resource type="Script" uid="uid://ckldqex7t24ro" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
+[ext_resource type="Texture2D" uid="uid://ke7l36ekc7dk" path="res://levels/chicken_coop/Game1E/assets/game1e.png" id="2_unk5v"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_ut8sb"]
 [ext_resource type="PackedScene" uid="uid://dabcu5hciojti" path="res://levels/chicken_coop/Game1E/box/day_box.tscn" id="4_ik08k"]
 [ext_resource type="PackedScene" uid="uid://bsdyoc26ce4tt" path="res://levels/chicken_coop/Game1E/box/night_box.tscn" id="5_unk5v"]
+[ext_resource type="PackedScene" uid="uid://bh22ri2lcdpkp" path="res://levels/chicken_coop/Game1E/card_stack/card_stack.tscn" id="6_sccsd"]
 
 [node name="Game1e" type="Node2D"]
 script = ExtResource("1_t63wd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -58)
-scale = Vector2(0.76123, 0.76123)
-texture = ExtResource("1_10xga")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0.431757, 0.742865)
+scale = Vector2(0.602675, 0.606032)
+texture = ExtResource("2_unk5v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -25,33 +26,15 @@ scenePath = "res://levels/chicken_coop/chicken_coop.tscn"
 position = Vector2(0, 261)
 
 [node name="DayBox" parent="." instance=ExtResource("4_ik08k")]
-position = Vector2(-196, -32)
-scale = Vector2(1.92, 1.92)
+position = Vector2(-204, -64)
+scale = Vector2(1.66771, 1.66771)
 
 [node name="NightBox" parent="." instance=ExtResource("5_unk5v")]
-position = Vector2(178, -38)
-scale = Vector2(1.88, 1.88)
+position = Vector2(2, -54)
+scale = Vector2(1.62843, 1.62843)
 
-[node name="TotalScore" type="Label" parent="."]
-offset_left = -543.0
-offset_top = -299.0
-offset_right = -503.0
-offset_bottom = -276.0
-theme_override_font_sizes/font_size = 45
-
-[node name="DayScore" type="Label" parent="."]
-offset_left = -341.0
-offset_top = -24.0
-offset_right = -301.0
-offset_bottom = 39.0
-theme_override_font_sizes/font_size = 45
-
-[node name="NightScore" type="Label" parent="."]
-offset_left = 287.0
-offset_top = -35.0
-offset_right = 327.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 45
+[node name="CardStack" parent="." instance=ExtResource("6_sccsd")]
+position = Vector2(182, -102)
 
 [connection signal="card_frame_dropped" from="DayBox" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="NightBox" to="." method="_on_night_box_card_frame_dropped"]

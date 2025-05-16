@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://spgpslvksa8p"
-path="res://.godot/imported/boxes.png-494a61d60b4c3f611b22d3800e0f2bb1.ctex"
+uid="uid://bptvgd2r161me"
+path="res://.godot/imported/card_stack3.png-1c8f2f3c8b5eecb4b3f92b004abec38d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/chicken_coop/assets/boxes.png"
-dest_files=["res://.godot/imported/boxes.png-494a61d60b4c3f611b22d3800e0f2bb1.ctex"]
+source_file="res://levels/chicken_coop/Game1E/card_stack/assets/card_stack3.png"
+dest_files=["res://.godot/imported/card_stack3.png-1c8f2f3c8b5eecb4b3f92b004abec38d.ctex"]
 
 [params]
 

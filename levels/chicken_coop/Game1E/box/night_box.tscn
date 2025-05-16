@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cea66jy56y85e" path="res://levels/chicken_coop/Game1E/box/assets/night_box.png" id="3_a0ipc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stolk"]
-size = Vector2(94.0114, 64.489)
+size = Vector2(87.1606, 38.4575)
 
 [node name="NightBox" type="Node2D"]
 script = ExtResource("1_b2wgp")
@@ -18,7 +18,7 @@ scale = Vector2(0.119997, 0.119997)
 texture = ExtResource("3_a0ipc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
-position = Vector2(1, -25)
+position = Vector2(-0.999999, -21.5)
 scale = Vector2(1.00963, 0.650068)
 shape = SubResource("RectangleShape2D_stolk")
 
