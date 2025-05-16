@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw1p134307k5h"]
+
+[ext_resource type="Script" uid="uid://dai5sgybkwm1r" path="res://utilities/scenes/dropzone/dropzone.gd" id="1_o3dpw"]
+
+[node name="Dropzone" type="Area2D" groups=["dropzones"]]
+script = ExtResource("1_o3dpw")

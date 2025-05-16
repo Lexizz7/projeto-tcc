@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciq5rsuvk0t72"]
+
+[ext_resource type="Texture2D" uid="uid://dk32l14nbqo6n" path="res://levels/chicken_coop/Game1E/assets/game1e_background.png" id="1_10xga"]
+[ext_resource type="Script" uid="uid://ckldqex7t24ro" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
+[ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_ut8sb"]
+
+[node name="Game1e" type="Node2D"]
+script = ExtResource("1_t63wd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -58)
+scale = Vector2(0.76123, 0.76123)
+texture = ExtResource("1_10xga")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackArrow" parent="." instance=ExtResource("2_ut8sb")]
+position = Vector2(-498, 247)
+scale = Vector2(0.400001, 0.400001)
+scenePath = "res://levels/chicken_coop/chicken_coop.tscn"
+
+[node name="CardSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, 261)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl6sgyfjhl58b"]
+
+[ext_resource type="PackedScene" uid="uid://dtlgrkau5ckeq" path="res://utilities/scenes/draggable/draggable.tscn" id="1_48pon"]
+[ext_resource type="Texture2D" uid="uid://c8hloh4732xn4" path="res://icon.svg" id="2_eapgq"]
+[ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="2_wmeqm"]
+[ext_resource type="Texture2D" uid="uid://opg26pvs7nud" path="res://characters/player/assets/player.png" id="4_eapgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j7ea"]
+size = Vector2(129, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmeqm"]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eapgq"]
+radius = 38.4708
+
+[node name="DragAndDropTest" type="Node2D"]
+
+[node name="Draggable" parent="." instance=ExtResource("1_48pon")]
+position = Vector2(151, -6)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
+texture = ExtResource("2_eapgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_3j7ea")
+
+[node name="Dropzone" parent="." instance=ExtResource("2_wmeqm")]
+position = Vector2(-123, -102)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
+shape = SubResource("CircleShape2D_wmeqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dropzone"]
+scale = Vector2(0.0399994, 0.0399994)
+texture = ExtResource("4_eapgq")
+
+[node name="Dropzone2" parent="." instance=ExtResource("2_wmeqm")]
+position = Vector2(-73, 103)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone2"]
+shape = SubResource("CircleShape2D_eapgq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dropzone2"]
+scale = Vector2(0.0399994, 0.0399994)
+texture = ExtResource("4_eapgq")
+
+[node name="Camera2D" type="Camera2D" parent="."]

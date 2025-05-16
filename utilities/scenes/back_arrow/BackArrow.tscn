@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://w0qpaga3tw4k"]
+
+[ext_resource type="Script" uid="uid://ddsk3rcnf8gpw" path="res://utilities/scenes/back_arrow/back_arrow.gd" id="1_6c4sq"]
+[ext_resource type="Texture2D" uid="uid://b4ffyrc7ppaka" path="res://utilities/scenes/back_arrow/assets/back_arrow.png" id="2_67qnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c4sq"]
+radius = 123.016
+
+[node name="BackArrow" type="Area2D"]
+script = ExtResource("1_6c4sq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.00003, -3.05176e-05)
+rotation = 3.14159
+scale = Vector2(0.201313, 0.201313)
+texture = ExtResource("2_67qnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -1)
+shape = SubResource("CircleShape2D_6c4sq")
