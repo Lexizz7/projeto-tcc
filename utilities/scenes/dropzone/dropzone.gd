@@ -1,16 +1,16 @@
 extends Area2D
 
-signal selected
+signal dropped
 
-func select():
+func drop(draggable: Area2D):
 	var tree = get_tree()
 	if !tree: 
 		return
 	
 	for child in tree.get_nodes_in_group("dropzones"):
-		child.deselect()
+		child.undrop()
 	
-	emit_signal("selected")
+	emit_signal("dropped", draggable)
 
-func deselect():
+func undrop():
 	pass

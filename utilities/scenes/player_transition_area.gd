@@ -31,7 +31,6 @@ func _on_body_exited(body: Node2D) -> void:
 	isPlayerIn = false
 	
 func _get_configuration_warnings() -> PackedStringArray:
-	var warnings = []
 	if !scenePath.is_absolute_path():
-		return warnings.push("Must provide a scene path.")
-	return warnings
+		return ["Must provide a scene path."]
+	return []

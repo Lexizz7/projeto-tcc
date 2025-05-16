@@ -18,7 +18,7 @@ func _input_event(viewport, event, shape_idx):
 			var overlapping_areas = dropzone.get_overlapping_areas()
 			for area in overlapping_areas:
 				if area.get_rid() == self.get_rid():
-					dropzone.select()
+					dropzone.drop(self)
 					rest_point = dropzone.global_position
 					return
 				

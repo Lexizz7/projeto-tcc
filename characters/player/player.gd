@@ -2,16 +2,45 @@ extends CharacterBody2D
 
 signal walk_finished
 
+enum PlayerPosition {
+	LEFT,
+	RIGHT
+}
+
 @export var speed := 400.0
+@export var initialPosition: PlayerPosition = PlayerPosition.LEFT
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Node2D = $Sprite
 
 var moving := false
+var playerPosition: PlayerPosition
+
+func _ready():
+	face_to(initialPosition)
+
+func face_to(position: PlayerPosition) -> void:
+	playerPosition = position
+	if position == PlayerPosition.LEFT:
+		sprite.scale.x = abs(sprite.scale.x)
+	else:
+		sprite.scale.x = -abs(sprite.scale.x)
 
 func walk_to(position: Vector2) -> void:
+	if nav_agent.target_position == position:
+		return
+	
+	if(position.x < global_position.x):
+		face_to(PlayerPosition.LEFT)
+	else:
+		face_to(PlayerPosition.RIGHT)
+	
 	nav_agent.target_position = position
 	moving = true
-	await self.walk_finished
+	animation_player.play("walk", -1, 2.5)
+	await walk_finished
+	animation_player.play("RESET")
 
 func _physics_process(delta: float) -> void:
 	if moving:

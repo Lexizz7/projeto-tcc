@@ -55,6 +55,6 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_h8uxh")]
 position = Vector2(-374, 277)
-rotation = 3.14159
-scale = Vector2(2.5, -2.5)
+scale = Vector2(2.5, 2.5)
 speed = 800.0
+initialPosition = 1
