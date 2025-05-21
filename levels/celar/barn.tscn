@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://btq0nmba8341k"]
+
+[ext_resource type="Texture2D" uid="uid://dj5r1rt1l7wao" path="res://levels/celar/assets/celar.png" id="1_okina"]
+[ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="2_rraan"]
+[ext_resource type="PackedScene" uid="uid://filj2464bwfm" path="res://utilities/scenes/PlayerTransitionArea.tscn" id="3_vqeug"]
+[ext_resource type="Texture2D" uid="uid://d0h3g3tsbpv00" path="res://levels/celar/assets/feed-pile.png" id="4_fj6r4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rqftb"]
+vertices = PackedVector2Array(-52.4531, 110.328, -36.6406, 115.438, -37.8516, 117.25, -68.1172, 132.383, -67.2578, 124.273, -101.648, 130.922, -107.258, 139.063, -140.281, 133.969, -173.094, 143.977, -187.008, 137.023, -226.406, 140.961, -233.117, 133.953, -271.258, 147.219, -259.68, 129.703, -345.906, 116.992, -288.977, 117.961, -313.594, 161, -363.32, 161, -375.602, 112.039, -400.133, 148.188, -396.898, 120.742, -403.758, 80.3906, -393.789, 76.5469)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 5, 6, 8), PackedInt32Array(9, 7, 8, 10), PackedInt32Array(11, 9, 10), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(14, 15, 13, 12, 16, 17), PackedInt32Array(18, 14, 17, 19, 20), PackedInt32Array(18, 20, 21, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-407, 121, -411, 155, -365, 171, -312, 171, -269, 157, -226, 151, -173, 154, -106, 149, -65, 142, -31, 125, -21, 110, -55, 99, -72, 115, -103, 121, -141, 124, -187, 127, -232, 124, -257, 120, -287, 108, -345, 107, -369, 103, -389, 64, -415, 74)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah53u"]
+size = Vector2(907, 945)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okina"]
+size = Vector2(303, 289)
+
+[node name="Celar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500008, -7.62939e-06)
+scale = Vector2(0.750651, 0.632813)
+texture = ExtResource("1_okina")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_rqftb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="feed_pile" parent="." instance=ExtResource("3_vqeug")]
+position = Vector2(-37, 40)
+scale = Vector2(0.177136, 0.177136)
+
+[node name="Sprite2D" type="Sprite2D" parent="feed_pile"]
+texture = ExtResource("4_fj6r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="feed_pile"]
+position = Vector2(11.5, 3.5)
+shape = SubResource("RectangleShape2D_ah53u")
+
+[node name="Player" parent="." instance=ExtResource("2_rraan")]
+position = Vector2(-335, 145)
+scale = Vector2(1.23658, 1.23658)
+initialPosition = 1
+
+[node name="PlayerTransitionArea" parent="." instance=ExtResource("3_vqeug")]
+position = Vector2(-421, -50)
+scenePath = "C:/Users/arthu/OneDrive/Área de Trabalho/Projetos/Ludico/projeto-tcc/levels/farm/farm.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTransitionArea"]
+position = Vector2(63.5, -8.5)
+shape = SubResource("RectangleShape2D_okina")
