@@ -43,6 +43,7 @@ metadata/_edit_lock_ = true
 position = Vector2(601, 323)
 rotation = -0.448408
 scale = Vector2(0.925767, 0.841694)
+scenePath = "C:/Users/arthu/OneDrive/Área de Trabalho/Projetos/Ludico/projeto-tcc/levels/celar/barn.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barn"]
