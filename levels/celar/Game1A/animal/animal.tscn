@@ -37,9 +37,11 @@ scale = Vector2(0.441396, 0.441396)
 texture = ExtResource("4_6uoss")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 40.0
-offset_top = -210.0
-offset_right = 80.0
-offset_bottom = -120.0
+offset_left = 24.0
+offset_top = -171.0
+offset_right = 64.0
+offset_bottom = -81.0
 theme_override_font_sizes/font_size = 65
 text = "0"
+
+[connection signal="dropped" from="Dropzone" to="." method="_on_dropzone_dropped"]

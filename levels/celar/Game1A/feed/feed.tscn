@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp7ghh7jpvqc0"]
+[gd_scene load_steps=5 format=3 uid="uid://bp7ghh7jpvqc0"]
 
 [ext_resource type="PackedScene" uid="uid://dtlgrkau5ckeq" path="res://utilities/scenes/draggable/draggable.tscn" id="1_e42ab"]
+[ext_resource type="Script" uid="uid://dkqdve000rkbl" path="res://levels/celar/Game1A/feed/feed.gd" id="1_n5g01"]
 [ext_resource type="Texture2D" uid="uid://d264axjyncyq8" path="res://levels/celar/Game1A/feed/assets/feed-a.png" id="2_n5g01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daqe6"]
@@ -8,6 +9,7 @@ size = Vector2(80, 84)
 
 [node name="feed" type="Node2D"]
 scale = Vector2(1.95171, 1.95171)
+script = ExtResource("1_n5g01")
 
 [node name="Draggable" parent="." instance=ExtResource("1_e42ab")]
 
