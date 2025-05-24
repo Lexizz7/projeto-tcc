@@ -31,6 +31,7 @@ navigation_polygon = SubResource("NavigationPolygon_rqftb")
 [node name="feed_pile" parent="." instance=ExtResource("3_vqeug")]
 position = Vector2(-37, 40)
 scale = Vector2(0.177136, 0.177136)
+scenePath = "res://levels/celar/Game1A/game1a.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="feed_pile"]
 texture = ExtResource("4_fj6r4")
