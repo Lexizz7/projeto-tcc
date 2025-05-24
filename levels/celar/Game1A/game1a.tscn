@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpdfdaxjcw8n7"]
+
+[ext_resource type="Script" uid="uid://bh6wybyb24442" path="res://levels/celar/Game1A/game_1a.gd" id="1_aanxa"]
+[ext_resource type="Texture2D" uid="uid://b5h46xmvbgmek" path="res://levels/celar/Game1A/assets/game1a.png" id="1_hovqm"]
+[ext_resource type="PackedScene" uid="uid://bw1toul88pnyw" path="res://levels/celar/Game1A/animal/animal.tscn" id="2_0xweb"]
+
+[node name="Game1a" type="Node2D"]
+script = ExtResource("1_aanxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.69224e-06, 1.46627e-05)
+scale = Vector2(0.75, 0.632813)
+texture = ExtResource("1_hovqm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="feed_spawn" type="Marker2D" parent="."]
+position = Vector2(0, 241)
+scale = Vector2(0.75, 0.632813)
+
+[node name="Animal" parent="." instance=ExtResource("2_0xweb")]
+position = Vector2(-361, -65)
+
+[node name="Animal2" parent="." instance=ExtResource("2_0xweb")]
+position = Vector2(-5, -76)
+
+[node name="Animal3" parent="." instance=ExtResource("2_0xweb")]
+position = Vector2(354, -75)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -555.0
+offset_top = -307.0
+offset_right = -515.0
+offset_bottom = -284.0
+text = "0"

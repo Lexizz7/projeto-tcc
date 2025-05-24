@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7yoollamcohe"
-path="res://.godot/imported/cow.png-c7e6b0cd8270ed8cf3caa2f461e86b58.ctex"
+uid="uid://b5h46xmvbgmek"
+path="res://.godot/imported/game1a.png-e9cbcd85a675ca4bd09183c0ec1adca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/assets/cow.png"
-dest_files=["res://.godot/imported/cow.png-c7e6b0cd8270ed8cf3caa2f461e86b58.ctex"]
+source_file="res://levels/celar/Game1A/assets/game1a.png"
+dest_files=["res://.godot/imported/game1a.png-e9cbcd85a675ca4bd09183c0ec1adca3.ctex"]
 
 [params]
 

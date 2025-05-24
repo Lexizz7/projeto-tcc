@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw1toul88pnyw"]
+
+[ext_resource type="Script" uid="uid://8qeqpgito0rd" path="res://levels/celar/Game1A/animal/animal.gd" id="1_0o8y0"]
+[ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="1_amudd"]
+[ext_resource type="Texture2D" uid="uid://b111ixhpgvp4m" path="res://levels/celar/Game1A/animal/assets/sheep.png" id="2_b40wy"]
+[ext_resource type="Texture2D" uid="uid://b7yoollamcohe" path="res://levels/celar/Game1A/animal/assets/cow.png" id="3_0o8y0"]
+[ext_resource type="Texture2D" uid="uid://cps5ywkcv2sk" path="res://levels/celar/Game1A/animal/assets/horse.png" id="4_6uoss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkb24"]
+radius = 24.0
+
+[node name="Animal" type="Node2D"]
+script = ExtResource("1_0o8y0")
+
+[node name="Dropzone" parent="." instance=ExtResource("1_amudd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
+position = Vector2(0, -10)
+scale = Vector2(4.61731, 4.61731)
+shape = SubResource("CircleShape2D_tkb24")
+
+[node name="sheep" type="Sprite2D" parent="Dropzone"]
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(0.280398, 0.280398)
+texture = ExtResource("2_b40wy")
+
+[node name="cow" type="Sprite2D" parent="Dropzone"]
+visible = false
+scale = Vector2(0.31969, 0.31969)
+texture = ExtResource("3_0o8y0")
+
+[node name="horse" type="Sprite2D" parent="Dropzone"]
+visible = false
+position = Vector2(0, -48)
+scale = Vector2(0.441396, 0.441396)
+texture = ExtResource("4_6uoss")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = -210.0
+offset_right = 80.0
+offset_bottom = -120.0
+theme_override_font_sizes/font_size = 65
+text = "0"
