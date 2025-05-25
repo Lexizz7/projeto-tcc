@@ -52,6 +52,9 @@ position = Vector2(-487, 241)
 scale = Vector2(0.517303, 0.517303)
 scenePath = "res://levels/celar/barn.tscn"
 
+[node name="feed_animation_mark" type="Marker2D" parent="."]
+position = Vector2(2, 416)
+
 [connection signal="feed_droped" from="Animal" to="." method="_on_animal_feed_droped"]
 [connection signal="feed_droped" from="Animal2" to="." method="_on_animal_feed_droped"]
 [connection signal="feed_droped" from="Animal3" to="." method="_on_animal_feed_droped"]

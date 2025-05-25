@@ -5,7 +5,6 @@ const CARD_FRAME = preload("res://levels/chicken_coop/Game1E/card_frame/card_fra
 @onready var card_spawn_point: Marker2D = $CardSpawnPoint
 @onready var card_stack: Area2D = $CardStack
 
-
 var day_score: int = 0
 var night_score: int = 0
 

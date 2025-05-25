@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl8orj7sa4ybo"]
+
+[ext_resource type="Script" uid="uid://dgoe1nrr2uef6" path="res://levels/farm/Game2E/game_2e.gd" id="1_57bqd"]
+[ext_resource type="Texture2D" uid="uid://bvncdr22rv1q3" path="res://levels/farm/Game2E/assets/game2e.png" id="1_mdh73"]
+[ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_cmugq"]
+[ext_resource type="PackedScene" uid="uid://bc6ijrs31lyel" path="res://utilities/scenes/animated_node/animated_node.tscn" id="4_2bgv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu242"]
+size = Vector2(283, 276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsy63"]
+size = Vector2(283, 276)
+
+[node name="Game2e" type="Node2D"]
+script = ExtResource("1_57bqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.753724, 0.753724)
+texture = ExtResource("1_mdh73")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackArrow" parent="." instance=ExtResource("2_cmugq")]
+position = Vector2(-489, 227)
+scale = Vector2(0.379983, 0.379983)
+scenePath = "res://levels/farm/farm.tscn"
+
+[node name="Item2" parent="." instance=ExtResource("4_2bgv6")]
+position = Vector2(300, -60)
+
+[node name="Area2D" type="Area2D" parent="Item2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Item2/Area2D"]
+position = Vector2(2, -25)
+scale = Vector2(0.311075, 0.311075)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Area2D"]
+position = Vector2(7, 30)
+shape = SubResource("RectangleShape2D_lu242")
+
+[node name="Item1" parent="." instance=ExtResource("4_2bgv6")]
+position = Vector2(-409, -54)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Item1"]
+position = Vector2(-2, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Item1/Area2D"]
+position = Vector2(17, -24)
+scale = Vector2(0.311075, 0.311075)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item1/Area2D"]
+position = Vector2(7, 30)
+shape = SubResource("RectangleShape2D_vsy63")
+
+[connection signal="input_event" from="Item2/Area2D" to="." method="_on_item_2_input_event"]
+[connection signal="input_event" from="Item1/Area2D" to="." method="_on_item_1_input_event"]

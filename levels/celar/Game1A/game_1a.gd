@@ -10,6 +10,7 @@ const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
 	$Animal2,
 	$Animal3,
 ]
+@onready var feed_animation_mark: Marker2D = $feed_animation_mark
 
 var total_feed = 0
 var score = 0
@@ -29,7 +30,12 @@ func _spawn_feed():
 	print(total_feed)
 	var feed_instance = FEED_BAG.instantiate()
 	feed_instance.position = feed_spawn.global_position
+	feed_instance.hide()
 	add_child(feed_instance)
+	
+	feed_instance.position = feed_animation_mark.global_position
+	feed_instance.show()
+	
 	feed_left.text = str(total_feed)
 
 func _on_animal_feed_droped() -> void:

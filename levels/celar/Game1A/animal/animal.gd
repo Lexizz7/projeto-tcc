@@ -33,5 +33,5 @@ func is_fed():
 func _on_dropzone_dropped(draggable: Area2D) -> void:
 	var feed_bag = draggable.get_parent()
 	feed_consumed += 1
+	await feed_bag.shrink_and_free()
 	emit_signal("feed_droped")
-	feed_bag.shrink_and_free()
