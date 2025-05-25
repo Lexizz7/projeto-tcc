@@ -20,13 +20,16 @@ position = Vector2(0, 241)
 scale = Vector2(0.75, 0.632813)
 
 [node name="Animal" parent="." instance=ExtResource("2_0xweb")]
-position = Vector2(-361, -65)
+position = Vector2(-384, 83)
+scale = Vector2(0.718635, 0.718635)
 
 [node name="Animal2" parent="." instance=ExtResource("2_0xweb")]
-position = Vector2(-5, -76)
+position = Vector2(-23, 50)
+scale = Vector2(0.71698, 0.71698)
 
 [node name="Animal3" parent="." instance=ExtResource("2_0xweb")]
-position = Vector2(354, -75)
+position = Vector2(363, 85)
+scale = Vector2(0.71574, 0.71574)
 
 [node name="feed_left" type="Label" parent="."]
 offset_left = 123.0

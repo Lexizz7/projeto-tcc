@@ -47,7 +47,7 @@ initialPosition = 1
 
 [node name="PlayerTransitionArea" parent="." instance=ExtResource("3_vqeug")]
 position = Vector2(-421, -50)
-scenePath = "C:/Users/arthu/OneDrive/Área de Trabalho/Projetos/Ludico/projeto-tcc/levels/farm/farm.tscn"
+scenePath = "res://levels/farm/farm.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTransitionArea"]
 position = Vector2(63.5, -8.5)
