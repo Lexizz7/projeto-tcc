@@ -3,10 +3,11 @@ extends Node2D
 const APPLE = preload("res://levels/house/game2a/apple/apple.tscn")
 
 @onready var apple_spawn_points: Node = $AppleSpawnPoints
-@onready var thought_baloons := [
-	$thought_1/Label,
-	$thought_2/Label,
-	$thought_3/Label
+
+@onready var thought_baloons: Array[Node2D]= [
+	$thought_1,
+	$thought_2,
+	$thought_3,
 ]
 
 var answer = 0
@@ -24,10 +25,10 @@ func spawnApples(n: int):
 		
 func _randomize():
 	thought_baloons.shuffle()
-	var numbers = _number_generator(6)
+	var numbers = _number_generator(5)
 	spawnApples(numbers[0] + 5)
 	for i in range (0, 3):
-		thought_baloons[i].text = str(numbers[i] + 5)
+		thought_baloons[i].get_node("Label").text = str(numbers[i] + 5)
 		
 func _number_generator(n: int):
 	var numbers = []
@@ -37,5 +38,11 @@ func _number_generator(n: int):
 	return numbers.slice(0, 3)
 
 
+
 func _ready():
 	_randomize()
+
+
+func _on_thought_node_clicked(node_name: String) -> void:
+	if get_node(node_name).get_node("Label").text == answer:
+		pass

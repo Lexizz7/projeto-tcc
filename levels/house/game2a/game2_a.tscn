@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://djvbfn4660vsy"]
+[gd_scene load_steps=9 format=3 uid="uid://djvbfn4660vsy"]
 
 [ext_resource type="Texture2D" uid="uid://dnm6ea8vsnhrl" path="res://levels/house/game2a/assets/game2a.png" id="1_hn3xx"]
 [ext_resource type="Script" uid="uid://ca1pdkkva1mas" path="res://levels/house/game2a/game_2_a.gd" id="1_u0rq2"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_u0rq2"]
+[ext_resource type="Script" uid="uid://c3px6kwa161o3" path="res://levels/house/game2a/thought_bubbles.gd" id="4_5dcq2"]
 [ext_resource type="Texture2D" uid="uid://bviols4volsgn" path="res://levels/house/game2a/assets/thought.png" id="4_c1q33"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dcq2"]
@@ -60,6 +61,7 @@ position = Vector2(70, -43)
 [node name="thought_1" type="Area2D" parent="."]
 position = Vector2(417, 174)
 scale = Vector2(6.89992, 6.89992)
+script = ExtResource("4_5dcq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="thought_1"]
 shape = SubResource("CircleShape2D_5dcq2")
@@ -82,6 +84,7 @@ text = "0"
 [node name="thought_2" type="Area2D" parent="."]
 position = Vector2(407, -205)
 scale = Vector2(6.72372, 6.72372)
+script = ExtResource("4_5dcq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="thought_2"]
 shape = SubResource("CircleShape2D_tpf86")
@@ -104,6 +107,7 @@ text = "0"
 [node name="thought_3" type="Area2D" parent="."]
 position = Vector2(412, -15)
 scale = Vector2(7.08583, 7.08583)
+script = ExtResource("4_5dcq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="thought_3"]
 shape = SubResource("CircleShape2D_jlp3p")
@@ -122,3 +126,18 @@ scale = Vector2(0.121289, 0.121289)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "0"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -558.0
+offset_top = -363.0
+offset_right = -518.0
+offset_bottom = -340.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[connection signal="input_event" from="thought_1" to="thought_1" method="_on_thought_input_event"]
+[connection signal="node_clicked" from="thought_1" to="." method="_on_thought_node_clicked"]
+[connection signal="input_event" from="thought_2" to="thought_2" method="_on_thought_input_event"]
+[connection signal="node_clicked" from="thought_2" to="." method="_on_thought_node_clicked"]
+[connection signal="input_event" from="thought_3" to="thought_3" method="_on_thought_input_event"]
+[connection signal="node_clicked" from="thought_3" to="." method="_on_thought_node_clicked"]
