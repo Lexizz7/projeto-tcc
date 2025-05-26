@@ -47,5 +47,5 @@ func _on_thought_node_clicked(node_name: String) -> void:
 	if get_node(node_name).get_node("Label").text == str(answer):
 		score += 1
 		label.text = str(score)
-	await emit_signal("game_end")
+	emit_signal("game_end")
 	_randomize()
