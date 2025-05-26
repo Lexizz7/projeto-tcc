@@ -32,6 +32,7 @@ centered = false
 
 [node name="House" parent="." instance=ExtResource("4_kobh8")]
 position = Vector2(221, 270)
+scenePath = "res://levels/house/house.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House"]

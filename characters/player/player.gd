@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-class_name Player
-
 signal walk_finished
 
 enum PlayerPosition {

@@ -1,8 +1,6 @@
 @tool
 extends Area2D
 
-class_name PlayerTransitionArea2D
-
 @export var scenePath: String:
 	set(value):
 		scenePath = value

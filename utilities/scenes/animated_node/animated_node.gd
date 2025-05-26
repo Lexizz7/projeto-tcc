@@ -1,7 +1,5 @@
 extends Node2D
 
-class_name AnimatedNode2D
-
 # Animation duration
 var duration: float = 0.5
 # Optional easing
