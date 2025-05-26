@@ -6,6 +6,8 @@ const SPRITE_PATH := "res://levels/farm/Game2E/assets/items/"
 @onready var item_1: Node2D = $Item1
 @onready var item_2: Node2D = $Item2
 
+signal game_end()
+
 var current_stage := {
 	"item1": "after",
 	"item2": "before",

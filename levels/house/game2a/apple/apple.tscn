@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bavens4ptmx5q"]
+[gd_scene load_steps=4 format=3 uid="uid://bavens4ptmx5q"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ijrs31lyel" path="res://utilities/scenes/animated_node/animated_node.tscn" id="1_6qjbf"]
+[ext_resource type="Script" uid="uid://4wr8iu2hpso5" path="res://levels/house/game2a/apple/apple.gd" id="1_hnwkj"]
 [ext_resource type="Texture2D" uid="uid://e1li5g6mmd2v" path="res://levels/house/game2a/apple/assets/apple.png" id="2_hnwkj"]
 
 [node name="Apple" type="Node2D"]
+script = ExtResource("1_hnwkj")
 
 [node name="AnimatedNode" parent="." instance=ExtResource("1_6qjbf")]
 

@@ -128,10 +128,11 @@ theme_override_font_sizes/font_size = 80
 text = "0"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -558.0
-offset_top = -363.0
-offset_right = -518.0
-offset_bottom = -340.0
+offset_left = -539.0
+offset_top = -310.0
+offset_right = -499.0
+offset_bottom = -241.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
 
