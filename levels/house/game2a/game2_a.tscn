@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://djvbfn4660vsy"]
+[gd_scene load_steps=8 format=3 uid="uid://djvbfn4660vsy"]
 
 [ext_resource type="Texture2D" uid="uid://dnm6ea8vsnhrl" path="res://levels/house/game2a/assets/game2a.png" id="1_hn3xx"]
 [ext_resource type="Script" uid="uid://ca1pdkkva1mas" path="res://levels/house/game2a/game_2_a.gd" id="1_u0rq2"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_u0rq2"]
+[ext_resource type="Texture2D" uid="uid://bviols4volsgn" path="res://levels/house/game2a/assets/thought.png" id="4_c1q33"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5dcq2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpf86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlp3p"]
 
 [node name="Game2A" type="Node2D"]
 script = ExtResource("1_u0rq2")
@@ -49,3 +56,69 @@ position = Vector2(-83, -40)
 
 [node name="Marker2D10" type="Marker2D" parent="AppleSpawnPoints"]
 position = Vector2(70, -43)
+
+[node name="thought_1" type="Area2D" parent="."]
+position = Vector2(417, 174)
+scale = Vector2(6.89992, 6.89992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thought_1"]
+shape = SubResource("CircleShape2D_5dcq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="thought_1"]
+position = Vector2(0.724646, 2.17394)
+scale = Vector2(0.0269203, 0.0269203)
+texture = ExtResource("4_c1q33")
+
+[node name="Label" type="Label" parent="thought_1"]
+offset_left = -2.89859
+offset_top = -7.24646
+offset_right = 43.1014
+offset_bottom = 102.754
+scale = Vector2(0.133461, 0.133461)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="thought_2" type="Area2D" parent="."]
+position = Vector2(407, -205)
+scale = Vector2(6.72372, 6.72372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thought_2"]
+shape = SubResource("CircleShape2D_tpf86")
+
+[node name="Sprite2D" type="Sprite2D" parent="thought_2"]
+position = Vector2(0.594913, 2.23091)
+scale = Vector2(0.0266346, 0.0266346)
+texture = ExtResource("4_c1q33")
+
+[node name="Label" type="Label" parent="thought_2"]
+offset_left = -2.82581
+offset_top = -6.69272
+offset_right = 43.1742
+offset_bottom = 103.307
+scale = Vector2(0.128957, 0.128957)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="thought_3" type="Area2D" parent="."]
+position = Vector2(412, -15)
+scale = Vector2(7.08583, 7.08583)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thought_3"]
+shape = SubResource("CircleShape2D_jlp3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="thought_3"]
+position = Vector2(0.564507, 2.1169)
+scale = Vector2(0.0269012, 0.0269012)
+texture = ExtResource("4_c1q33")
+
+[node name="Label" type="Label" parent="thought_3"]
+offset_left = -2.96366
+offset_top = -7.33859
+offset_right = 43.0363
+offset_bottom = 102.661
+scale = Vector2(0.121289, 0.121289)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "0"
