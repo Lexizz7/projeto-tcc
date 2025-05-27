@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwhpkb0q140vd"]
+
+[ext_resource type="PackedScene" uid="uid://dtlgrkau5ckeq" path="res://utilities/scenes/draggable/draggable.tscn" id="1_4n305"]
+[ext_resource type="Script" uid="uid://bwe37b1iql3rr" path="res://levels/house/game3e/puzzle_piece/puzzle_piece.gd" id="1_mamka"]
+[ext_resource type="Texture2D" uid="uid://b7fjpjh0je4np" path="res://levels/house/game3e/puzzle_piece/assets/puzzle_piece.png" id="2_mamka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2exq8"]
+size = Vector2(132, 126)
+
+[node name="PuzzlePiece" type="Node2D"]
+script = ExtResource("1_mamka")
+
+[node name="Draggable" parent="." instance=ExtResource("1_4n305")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
+scale = Vector2(0.171209, 0.171209)
+texture = ExtResource("2_mamka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+position = Vector2(9, 3)
+shape = SubResource("RectangleShape2D_2exq8")

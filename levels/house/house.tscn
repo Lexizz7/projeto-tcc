@@ -1,19 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8x03o26nqqxl"]
+[gd_scene load_steps=9 format=3 uid="uid://c8x03o26nqqxl"]
 
 [ext_resource type="Texture2D" uid="uid://ckbp0klngq7dn" path="res://levels/house/assets/house.png" id="1_nll3y"]
 [ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="2_3xbg0"]
 [ext_resource type="PackedScene" uid="uid://filj2464bwfm" path="res://utilities/scenes/PlayerTransitionArea.tscn" id="3_3xbg0"]
+[ext_resource type="Texture2D" uid="uid://cdwmbtpjvekbs" path="res://levels/house/assets/puzzlebox.png" id="4_j0pwv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j0pwv"]
-vertices = PackedVector2Array(-17.9219, 261.43, -17.6563, 261.359, -190.531, 309.039, -370.383, 314.938, -550.906, 249.367, -514.078, 239.383, -366.508, 282.258, 178.242, 160.156, 209.039, 162.172, 199.844, 195.023, 124.43, 189.523, -77.1328, 228.82)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(2, 3, 6, 11, 0), PackedInt32Array(0, 11, 10, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-584, 248, -372, 325, -189, 319, -15, 271, 208, 203, 222, 153, 176, 150, 121, 180, -79, 219, -366, 272, -514, 229)])
+vertices = PackedVector2Array(-370.383, 314.938, -550.906, 249.367, -514.078, 239.383, -366.508, 282.258, 409.508, 271.742, 428.75, 292.063, 17.8203, 311.992, 325.273, 244.992, 178.242, 160.156, 218.352, 162.781, 260.969, 194.977, 124.43, 189.523, -77.1328, 228.82, -189.094, 309)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 7, 6, 11), PackedInt32Array(12, 11, 6, 13), PackedInt32Array(3, 12, 13, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-584, 248, -372, 325, -189, 319, 18, 322, 451, 301, 415, 263, 330, 236, 267, 187, 222, 153, 176, 150, 121, 180, -79, 219, -366, 272, -514, 229)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vnkb"]
 size = Vector2(290, 435)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xbg0"]
 size = Vector2(143, 507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqfmh"]
+size = Vector2(232, 183)
 
 [node name="House" type="Node2D"]
 
@@ -23,12 +27,12 @@ texture = ExtResource("1_nll3y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_j0pwv")
+
 [node name="Player" parent="." instance=ExtResource("2_3xbg0")]
 position = Vector2(141, 205)
 scale = Vector2(2.30255, 2.30255)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_j0pwv")
 
 [node name="ExitDoor" parent="." instance=ExtResource("3_3xbg0")]
 position = Vector2(179, -32)
@@ -46,3 +50,16 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(19.5, -12.5)
 shape = SubResource("RectangleShape2D_3xbg0")
+
+[node name="PuzzleBox" parent="." instance=ExtResource("3_3xbg0")]
+position = Vector2(454, 218)
+scenePath = "res://levels/house/game3e/game3_e.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBox"]
+position = Vector2(2, -6.5)
+shape = SubResource("RectangleShape2D_hqfmh")
+
+[node name="Sprite2D" type="Sprite2D" parent="PuzzleBox"]
+scale = Vector2(-0.184488, 0.184488)
+texture = ExtResource("4_j0pwv")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://x51ixabpyfrg"]
+
+[ext_resource type="Texture2D" uid="uid://dwqa7vhpx6654" path="res://levels/house/game3e/assets/game3e.png" id="1_doya8"]
+[ext_resource type="Script" uid="uid://de3c25xr7kjbg" path="res://levels/house/game3e/game_3_e.gd" id="1_urxam"]
+[ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_hjjqd"]
+[ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_gw7y5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_urxam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b0b7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tc173"]
+
+[node name="Game3E" type="Node2D"]
+script = ExtResource("1_urxam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.758429, 0.758429)
+texture = ExtResource("1_doya8")
+
+[node name="BackArrow" parent="." instance=ExtResource("2_hjjqd")]
+position = Vector2(-494, 237)
+scale = Vector2(0.328652, 0.328652)
+scenePath = "res://levels/house/house.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dropzone" parent="." instance=ExtResource("3_gw7y5")]
+position = Vector2(-155, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
+scale = Vector2(6.62491, 6.62491)
+shape = SubResource("CircleShape2D_urxam")
+
+[node name="Dropzone2" parent="." instance=ExtResource("3_gw7y5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone2"]
+scale = Vector2(6.62491, 6.62491)
+shape = SubResource("CircleShape2D_6b0b7")
+
+[node name="Dropzone3" parent="." instance=ExtResource("3_gw7y5")]
+position = Vector2(152, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone3"]
+scale = Vector2(6.62491, 6.62491)
+shape = SubResource("CircleShape2D_tc173")
+
+[connection signal="dropped" from="Dropzone" to="." method="_on_dropzone_dropped"]
+[connection signal="dropped" from="Dropzone2" to="." method="_on_dropzone_dropped"]
+[connection signal="dropped" from="Dropzone3" to="." method="_on_dropzone_dropped"]
