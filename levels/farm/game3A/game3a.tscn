@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://uxh4ellquyfd"]
+
+[ext_resource type="Texture2D" uid="uid://crmhe60rohyau" path="res://levels/farm/game3A/assets/game3A.png" id="1_qkui4"]
+
+[node name="Game3a" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.98133e-05, -7.7486e-06)
+scale = Vector2(0.75, 0.632813)
+texture = ExtResource("1_qkui4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
