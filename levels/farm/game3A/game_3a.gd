@@ -1,0 +1,65 @@
+extends Node2D
+signal game_end
+const PAPER = preload("res://levels/farm/game3A/paper/paper.tscn")
+@onready var number_spawn: Marker2D = $number_spawn
+@onready var horde: Node = $horde
+@onready var label: Label = $Label
+
+var score = 0
+var is_correct = true
+var number_list = []
+var colors := [
+		"blue",
+		"green",
+		"orange",
+		"red",
+		"white"
+	]
+	
+func _ready() -> void:
+	score = 0
+	_randomize()
+
+func _randomize():
+	var hordes = horde.get_children()
+	number_list = _number_generator(9)
+	colors.shuffle()
+	for i in hordes.size():
+		hordes[i].spawn_sheep(number_list[i], colors[i])
+	number_list.shuffle()
+	print(number_list)
+	spawn_paper(number_list.pop_front())
+		
+func spawn_paper(n: int):
+	var paper_instance = PAPER.instantiate()
+	paper_instance.global_position = number_spawn.global_position
+	add_child(paper_instance)
+	paper_instance.set_label(n)
+
+func _on_sheep_horde_paper_droped() -> void:
+	print("papel")
+	if number_list.size() == 0:
+		validate()
+		_randomize()
+		return
+	spawn_paper(number_list.pop_front())
+
+
+func _on_sheep_horde_result(answer: bool) -> void:
+	if !answer:
+		is_correct = false
+	print(is_correct)
+	
+func validate():
+	if is_correct:
+		score += 1
+		label.text = str(score)
+	is_correct = true
+	emit_signal("game_end")
+	
+func _number_generator(n: int):
+	var numbers = []
+	for i in range(1, n):
+		numbers.append(i)
+	numbers.shuffle()
+	return numbers.slice(0, 5)

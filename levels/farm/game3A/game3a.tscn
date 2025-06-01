@@ -1,12 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://uxh4ellquyfd"]
+[gd_scene load_steps=5 format=3 uid="uid://uxh4ellquyfd"]
 
+[ext_resource type="Script" uid="uid://dxu210nf0uadj" path="res://levels/farm/game3A/game_3a.gd" id="1_2e85b"]
 [ext_resource type="Texture2D" uid="uid://crmhe60rohyau" path="res://levels/farm/game3A/assets/game3A.png" id="1_qkui4"]
+[ext_resource type="PackedScene" uid="uid://t75uv1swo8ba" path="res://levels/farm/game3A/horde/sheep_horde.tscn" id="2_4cmge"]
+[ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="4_hovlp"]
 
 [node name="Game3a" type="Node2D"]
+script = ExtResource("1_2e85b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5.98133e-05, -7.7486e-06)
-scale = Vector2(0.75, 0.632813)
+position = Vector2(5.98133e-05, -64)
 texture = ExtResource("1_qkui4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="number_spawn" type="Marker2D" parent="."]
+position = Vector2(0, 38)
+
+[node name="horde" type="Node" parent="."]
+
+[node name="SheepHorde" parent="horde" instance=ExtResource("2_4cmge")]
+position = Vector2(-440, -78)
+
+[node name="SheepHorde2" parent="horde" instance=ExtResource("2_4cmge")]
+position = Vector2(6, -159)
+
+[node name="SheepHorde3" parent="horde" instance=ExtResource("2_4cmge")]
+position = Vector2(433, -102)
+
+[node name="SheepHorde4" parent="horde" instance=ExtResource("2_4cmge")]
+position = Vector2(-256, 179)
+
+[node name="SheepHorde5" parent="horde" instance=ExtResource("2_4cmge")]
+position = Vector2(260, 184)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -501.0
+offset_top = -275.0
+offset_right = -461.0
+offset_bottom = -252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="BackArrow" parent="." instance=ExtResource("4_hovlp")]
+position = Vector2(-507, 237)
+scale = Vector2(0.351519, 0.351519)
+scenePath = "res://levels/farm/farm.tscn"
+
+[connection signal="game_end" from="." to="horde/SheepHorde" method="_on_game_end"]
+[connection signal="game_end" from="." to="horde/SheepHorde2" method="_on_game_end"]
+[connection signal="game_end" from="." to="horde/SheepHorde3" method="_on_game_end"]
+[connection signal="game_end" from="." to="horde/SheepHorde4" method="_on_game_end"]
+[connection signal="game_end" from="." to="horde/SheepHorde5" method="_on_game_end"]
+[connection signal="paper_droped" from="horde/SheepHorde" to="." method="_on_sheep_horde_paper_droped"]
+[connection signal="result" from="horde/SheepHorde" to="." method="_on_sheep_horde_result"]
+[connection signal="paper_droped" from="horde/SheepHorde2" to="." method="_on_sheep_horde_paper_droped"]
+[connection signal="result" from="horde/SheepHorde2" to="." method="_on_sheep_horde_result"]
+[connection signal="paper_droped" from="horde/SheepHorde3" to="." method="_on_sheep_horde_paper_droped"]
+[connection signal="result" from="horde/SheepHorde3" to="." method="_on_sheep_horde_result"]
+[connection signal="paper_droped" from="horde/SheepHorde4" to="." method="_on_sheep_horde_paper_droped"]
+[connection signal="result" from="horde/SheepHorde4" to="." method="_on_sheep_horde_result"]
+[connection signal="paper_droped" from="horde/SheepHorde5" to="." method="_on_sheep_horde_paper_droped"]
+[connection signal="result" from="horde/SheepHorde5" to="." method="_on_sheep_horde_result"]

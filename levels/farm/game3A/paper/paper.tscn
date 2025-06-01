@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://r8x477nxmq3u"]
+
+[ext_resource type="Script" uid="uid://cca438rees16g" path="res://levels/farm/game3A/paper/paper.gd" id="1_bbs68"]
+[ext_resource type="Script" uid="uid://cekmx4m8wkvnn" path="res://utilities/scenes/draggable/draggable.gd" id="1_p5q2p"]
+[ext_resource type="Texture2D" uid="uid://bw3wserc08gi4" path="res://levels/farm/game3A/paper/assets/Paper.png" id="2_bbs68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idn03"]
+size = Vector2(738, 888)
+
+[node name="Paper" type="Node2D"]
+scale = Vector2(0.0946482, 0.0946482)
+script = ExtResource("1_bbs68")
+
+[node name="Draggable" type="Area2D" parent="."]
+script = ExtResource("1_p5q2p")
+metadata/_custom_type_script = "uid://cekmx4m8wkvnn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
+position = Vector2(-3.14875e-07, 2.519e-06)
+scale = Vector2(1, 1)
+texture = ExtResource("2_bbs68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+position = Vector2(-4, 23)
+shape = SubResource("RectangleShape2D_idn03")
+
+[node name="Label" type="Label" parent="Draggable"]
+offset_left = -148.0
+offset_top = -333.0
+offset_right = 137.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 500
+text = "0"

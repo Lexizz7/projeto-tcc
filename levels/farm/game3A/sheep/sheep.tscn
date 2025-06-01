@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpswd533t5tog"]
+
+[ext_resource type="PackedScene" uid="uid://bc6ijrs31lyel" path="res://utilities/scenes/animated_node/animated_node.tscn" id="1_3rkqx"]
+[ext_resource type="Script" uid="uid://dc4k2tg234orb" path="res://levels/farm/game3A/sheep/sheep.gd" id="1_hl5ud"]
+[ext_resource type="Texture2D" uid="uid://dirkswswdsxhm" path="res://levels/farm/game3A/sheep/assets/white.png" id="2_801bl"]
+[ext_resource type="Texture2D" uid="uid://c2utfcs5bcqsb" path="res://levels/farm/game3A/sheep/assets/red.png" id="3_hl5ud"]
+[ext_resource type="Texture2D" uid="uid://cx6h3vdpxj8k0" path="res://levels/farm/game3A/sheep/assets/orange.png" id="4_r13qf"]
+[ext_resource type="Texture2D" uid="uid://cu5o0sbdpttri" path="res://levels/farm/game3A/sheep/assets/green.png" id="5_uj5gv"]
+[ext_resource type="Texture2D" uid="uid://cs38y6jpi0mme" path="res://levels/farm/game3A/sheep/assets/blue.png" id="6_u3uuw"]
+
+[node name="Sheep" type="Node2D"]
+scale = Vector2(0.81, 0.81)
+script = ExtResource("1_hl5ud")
+
+[node name="AnimatedNode" parent="." instance=ExtResource("1_3rkqx")]
+scale = Vector2(0.198885, 0.198885)
+
+[node name="white" type="Sprite2D" parent="AnimatedNode"]
+scale = Vector2(0.486138, 0.486138)
+texture = ExtResource("2_801bl")
+
+[node name="red" type="Sprite2D" parent="AnimatedNode"]
+visible = false
+position = Vector2(441, 184)
+scale = Vector2(0.851742, 0.851742)
+texture = ExtResource("3_hl5ud")
+
+[node name="orange" type="Sprite2D" parent="AnimatedNode"]
+visible = false
+position = Vector2(-12, 188)
+scale = Vector2(0.856603, 0.856603)
+texture = ExtResource("4_r13qf")
+
+[node name="green" type="Sprite2D" parent="AnimatedNode"]
+visible = false
+position = Vector2(200, -249)
+scale = Vector2(0.889541, 0.889541)
+texture = ExtResource("5_uj5gv")
+
+[node name="blue" type="Sprite2D" parent="AnimatedNode"]
+visible = false
+position = Vector2(-357, -250)
+scale = Vector2(0.91368, 0.91368)
+texture = ExtResource("6_u3uuw")
