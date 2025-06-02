@@ -27,7 +27,6 @@ func _setup():
 	_spawn_feed()
 
 func _spawn_feed():
-	print(total_feed)
 	var feed_instance = FEED_BAG.instantiate()
 	feed_instance.position = feed_spawn.global_position
 	feed_instance.hide()
@@ -53,3 +52,11 @@ func _verify():
 		score += 1
 		score_label.text = str(score)
 	_setup()
+
+
+func _on_animal_overfed() -> void:
+	print("Overfed")
+	total_feed += 1
+	feed_left.text = str(total_feed)
+	for animal in animals:
+		animal.on_overfed()

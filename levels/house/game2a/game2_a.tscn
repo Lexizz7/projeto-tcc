@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://djvbfn4660vsy"]
+[gd_scene load_steps=10 format=3 uid="uid://djvbfn4660vsy"]
 
 [ext_resource type="Texture2D" uid="uid://dnm6ea8vsnhrl" path="res://levels/house/game2a/assets/game2a.png" id="1_hn3xx"]
 [ext_resource type="Script" uid="uid://ca1pdkkva1mas" path="res://levels/house/game2a/game_2_a.gd" id="1_u0rq2"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_u0rq2"]
 [ext_resource type="Script" uid="uid://c3px6kwa161o3" path="res://levels/house/game2a/thought_bubbles.gd" id="4_5dcq2"]
 [ext_resource type="Texture2D" uid="uid://bviols4volsgn" path="res://levels/house/game2a/assets/thought.png" id="4_c1q33"]
+[ext_resource type="Texture2D" uid="uid://cb56yor7qsl1x" path="res://levels/house/game2a/assets/red circle.png" id="6_tpf86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dcq2"]
 
@@ -71,6 +72,12 @@ position = Vector2(0.724646, 2.17394)
 scale = Vector2(0.0269203, 0.0269203)
 texture = ExtResource("4_c1q33")
 
+[node name="Red Circle" type="Sprite2D" parent="thought_1"]
+visible = false
+position = Vector2(0.144931, 7.15256e-07)
+scale = Vector2(0.0699489, 0.0699489)
+texture = ExtResource("6_tpf86")
+
 [node name="Label" type="Label" parent="thought_1"]
 offset_left = -2.89859
 offset_top = -7.24646
@@ -93,6 +100,11 @@ shape = SubResource("CircleShape2D_tpf86")
 position = Vector2(0.594913, 2.23091)
 scale = Vector2(0.0266346, 0.0266346)
 texture = ExtResource("4_c1q33")
+
+[node name="Red Circle" type="Sprite2D" parent="thought_2"]
+visible = false
+scale = Vector2(0.0706587, 0.0706587)
+texture = ExtResource("6_tpf86")
 
 [node name="Label" type="Label" parent="thought_2"]
 offset_left = -2.82581
@@ -117,6 +129,11 @@ position = Vector2(0.564507, 2.1169)
 scale = Vector2(0.0269012, 0.0269012)
 texture = ExtResource("4_c1q33")
 
+[node name="Red Circle" type="Sprite2D" parent="thought_3"]
+visible = false
+scale = Vector2(0.0717002, 0.0717002)
+texture = ExtResource("6_tpf86")
+
 [node name="Label" type="Label" parent="thought_3"]
 offset_left = -2.96366
 offset_top = -7.33859
@@ -136,6 +153,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
 
+[connection signal="game_end" from="." to="thought_1" method="_on_game_game_end"]
+[connection signal="game_end" from="." to="thought_2" method="_on_game_game_end"]
+[connection signal="game_end" from="." to="thought_3" method="_on_game_game_end"]
 [connection signal="input_event" from="thought_1" to="thought_1" method="_on_thought_input_event"]
 [connection signal="node_clicked" from="thought_1" to="." method="_on_thought_node_clicked"]
 [connection signal="input_event" from="thought_2" to="thought_2" method="_on_thought_input_event"]

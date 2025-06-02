@@ -15,16 +15,18 @@ script = ExtResource("1_bbs68")
 script = ExtResource("1_p5q2p")
 metadata/_custom_type_script = "uid://cekmx4m8wkvnn"
 
-[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
-position = Vector2(-3.14875e-07, 2.519e-06)
-scale = Vector2(1, 1)
-texture = ExtResource("2_bbs68")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
 position = Vector2(-4, 23)
 shape = SubResource("RectangleShape2D_idn03")
 
+[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
+z_index = 1
+position = Vector2(-3.14875e-07, 2.519e-06)
+scale = Vector2(1, 1)
+texture = ExtResource("2_bbs68")
+
 [node name="Label" type="Label" parent="Draggable"]
+z_index = 1
 offset_left = -148.0
 offset_top = -333.0
 offset_right = 137.0

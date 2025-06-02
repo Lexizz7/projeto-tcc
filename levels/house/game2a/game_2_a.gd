@@ -12,6 +12,8 @@ signal game_end()
 
 var answer = 0
 var score = 0
+var round = 0
+var is_correct = 1
 
 func spawnApples(n: int):
 	answer = n
@@ -26,6 +28,7 @@ func spawnApples(n: int):
 		add_child(apple_instance)
 		
 func _randomize():
+	is_correct = 1
 	thought_baloons.shuffle()
 	var numbers = _number_generator(5)
 	spawnApples(numbers[0] + 5)
@@ -45,7 +48,11 @@ func _ready():
 
 func _on_thought_node_clicked(node_name: String) -> void:
 	if get_node(node_name).get_node("Label").text == str(answer):
-		score += 1
+		score += is_correct
 		label.text = str(score)
-	emit_signal("game_end")
-	_randomize()
+		emit_signal("game_end")
+		_randomize()
+		return
+	thought_baloons[0].highlight_sprite()
+	is_correct = 0
+	

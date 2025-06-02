@@ -36,20 +36,21 @@ func spawn_paper(n: int):
 	add_child(paper_instance)
 	paper_instance.set_label(n)
 
-func _on_sheep_horde_paper_droped() -> void:
+func _on_sheep_horde_paper_droped(answer: bool, number: String) -> void:
 	print("papel")
 	if number_list.size() == 0:
 		validate()
 		_randomize()
 		return
-	spawn_paper(number_list.pop_front())
-
-
-func _on_sheep_horde_result(answer: bool) -> void:
 	if !answer:
 		is_correct = false
+		for group in horde.get_children():
+			if group.get_total_sheep() == number:
+				group.show_answer()
+		number_list.push_front(int(number))
 	print(is_correct)
-	
+	spawn_paper(number_list.pop_front())
+
 func validate():
 	if is_correct:
 		score += 1

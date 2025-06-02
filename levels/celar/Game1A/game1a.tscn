@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpdfdaxjcw8n7"]
+[gd_scene load_steps=7 format=3 uid="uid://bpdfdaxjcw8n7"]
 
 [ext_resource type="Script" uid="uid://bh6wybyb24442" path="res://levels/celar/Game1A/game_1a.gd" id="1_aanxa"]
 [ext_resource type="Texture2D" uid="uid://b5h46xmvbgmek" path="res://levels/celar/Game1A/assets/game1a.png" id="1_hovqm"]
 [ext_resource type="PackedScene" uid="uid://bw1toul88pnyw" path="res://levels/celar/Game1A/animal/animal.tscn" id="2_0xweb"]
+[ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_v6im3"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="4_rsuxh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hte5p"]
 
 [node name="Game1a" type="Node2D"]
 script = ExtResource("1_aanxa")
@@ -18,6 +21,13 @@ texture = ExtResource("1_hovqm")
 [node name="feed_spawn" type="Marker2D" parent="."]
 position = Vector2(0, 241)
 scale = Vector2(0.75, 0.632813)
+
+[node name="Dropzone" parent="feed_spawn" instance=ExtResource("3_v6im3")]
+position = Vector2(0, -1.58023)
+scale = Vector2(1.33333, 1.58025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="feed_spawn/Dropzone"]
+shape = SubResource("CircleShape2D_hte5p")
 
 [node name="Animal" parent="." instance=ExtResource("2_0xweb")]
 position = Vector2(-384, 83)
@@ -56,5 +66,8 @@ scenePath = "res://levels/celar/barn.tscn"
 position = Vector2(2, 416)
 
 [connection signal="feed_droped" from="Animal" to="." method="_on_animal_feed_droped"]
+[connection signal="overfed" from="Animal" to="." method="_on_animal_overfed"]
 [connection signal="feed_droped" from="Animal2" to="." method="_on_animal_feed_droped"]
+[connection signal="overfed" from="Animal2" to="." method="_on_animal_overfed"]
 [connection signal="feed_droped" from="Animal3" to="." method="_on_animal_feed_droped"]
+[connection signal="overfed" from="Animal3" to="." method="_on_animal_overfed"]

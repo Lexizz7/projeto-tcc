@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw1toul88pnyw"]
+[gd_scene load_steps=8 format=3 uid="uid://bw1toul88pnyw"]
 
 [ext_resource type="Script" uid="uid://8qeqpgito0rd" path="res://levels/celar/Game1A/animal/animal.gd" id="1_0o8y0"]
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="1_amudd"]
 [ext_resource type="Texture2D" uid="uid://b111ixhpgvp4m" path="res://levels/celar/Game1A/animal/assets/sheep.png" id="2_b40wy"]
 [ext_resource type="Texture2D" uid="uid://b7yoollamcohe" path="res://levels/celar/Game1A/animal/assets/cow.png" id="3_0o8y0"]
+[ext_resource type="Texture2D" uid="uid://dl2ihk3qo3nfl" path="res://levels/celar/Game1A/assets/red circle.png" id="3_6uoss"]
 [ext_resource type="Texture2D" uid="uid://cps5ywkcv2sk" path="res://levels/celar/Game1A/animal/assets/horse.png" id="4_6uoss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkb24"]
@@ -14,7 +15,12 @@ script = ExtResource("1_0o8y0")
 
 [node name="Dropzone" parent="." instance=ExtResource("1_amudd")]
 
+[node name="red_circle" type="Sprite2D" parent="Dropzone"]
+scale = Vector2(1.18123, 1.18123)
+texture = ExtResource("3_6uoss")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
+visible = false
 position = Vector2(0, -10)
 scale = Vector2(4.61731, 4.61731)
 shape = SubResource("CircleShape2D_tkb24")
