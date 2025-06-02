@@ -1,6 +1,6 @@
 extends Node2D
 
-const STAGE_COUNT := 1
+const STAGE_COUNT := 18
 const SPRITE_PATH := "res://levels/farm/Game2E/assets/items/"
 
 @onready var item_1: Node2D = $Item1
@@ -10,6 +10,8 @@ var current_stage := {
 	"item1": "after",
 	"item2": "before",
 }
+
+var count := 0
 
 func set_stage(index: int):
 	if index < 0 or index > STAGE_COUNT:
@@ -43,14 +45,21 @@ func _ready() -> void:
 	set_stage(randi() % STAGE_COUNT)
 
 func on_input(item: String):
-	if current_stage[item] == "before":
-		print("acertou")
-	else:
-		print("errou")
+	if current_stage[item] != "before":
+		if item.contains('1'):
+			item_1.shake()
+		else:
+			item_2.shake()
+		return
+	count += 1
+	if count > 10:
+		var tree = get_tree()
+		if tree:
+			tree.change_scene_to_file("res://levels/farm/farm.tscn")
+		return
 	
 	item_1.shrink()
 	await item_2.shrink()
-	
 	set_stage(randi() % STAGE_COUNT)
 	
 	item_1.grow()

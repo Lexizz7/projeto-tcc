@@ -68,3 +68,18 @@ func slide_out(direction: String):
 
 	tween.tween_property(self, "position", target_pos, duration)
 	await tween.finished
+
+# SHAKE: Small random jitter around original position
+func shake(intensity := 10, shakes := 5, shake_duration := 0.3):
+	var tween = get_tree().create_tween()
+	var time_per_shake = shake_duration / float(shakes)
+	
+	for i in range(shakes):
+		var offset = Vector2(
+			randf_range(-intensity, intensity),
+			randf_range(-intensity, intensity)
+		)
+		tween.tween_property(self, "position", original_position + offset, time_per_shake / 2).set_trans(transition_type).set_ease(ease_type)
+		tween.tween_property(self, "position", original_position, time_per_shake / 2).set_trans(transition_type).set_ease(ease_type)
+
+	await tween.finished

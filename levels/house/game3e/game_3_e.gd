@@ -4,7 +4,7 @@ const PUZZLE_PIECE = preload("res://levels/house/game3e/puzzle_piece/puzzle_piec
 
 @onready var dropzones: Array[Dropzone]
 var pieces: Array[PuzzlePiece]
-var games := [1,2,3]
+var games := [1,2,3,4,5,6]
 
 func setDropzones():
 	var dropzone_nodes = self.get_tree().get_nodes_in_group("dropzones")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4cc6edcn10xf"
-path="res://.godot/imported/0before.png-6f05e4f867f1d16374f811daedf732f2.ctex"
+uid="uid://cwldd0pq1y2eh"
+path="res://.godot/imported/8after.png-adb3ff43e5a07b207b2085bfb2de394d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/farm/Game2E/assets/items/0before.png"
-dest_files=["res://.godot/imported/0before.png-6f05e4f867f1d16374f811daedf732f2.ctex"]
+source_file="res://levels/farm/Game2E/assets/items/8after.png"
+dest_files=["res://.godot/imported/8after.png-adb3ff43e5a07b207b2085bfb2de394d.ctex"]
 
 [params]
 

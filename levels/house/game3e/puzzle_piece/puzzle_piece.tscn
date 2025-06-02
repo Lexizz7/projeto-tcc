@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7fjpjh0je4np" path="res://levels/house/game3e/puzzle_piece/assets/puzzle_piece.png" id="2_mamka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2exq8"]
-size = Vector2(132, 126)
+size = Vector2(247, 237)
 
 [node name="PuzzlePiece" type="Node2D"]
 script = ExtResource("1_mamka")
@@ -13,13 +13,13 @@ script = ExtResource("1_mamka")
 [node name="Draggable" parent="." instance=ExtResource("1_4n305")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable"]
-scale = Vector2(0.171209, 0.171209)
+scale = Vector2(0.313359, 0.313359)
 texture = ExtResource("2_mamka")
 
 [node name="Item" type="Sprite2D" parent="Draggable"]
-position = Vector2(5, -8)
-scale = Vector2(0.155, 0.155)
+position = Vector2(8.77315, -7.77314)
+scale = Vector2(0.288866, 0.288866)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
-position = Vector2(9, 3)
+position = Vector2(15.5, 5.5)
 shape = SubResource("RectangleShape2D_2exq8")
