@@ -15,6 +15,7 @@ func _ready():
 
 func spawn_card():
 	if cards_dropped > 10:
+		card_stack.level = 4
 		return
 	elif  cards_dropped > 7:
 		card_stack.level = 3
@@ -34,11 +35,11 @@ func spawn_card():
 func _on_day_box_card_frame_dropped(isCorrect: bool) -> void:
 	if isCorrect:
 		day_score += 1
-	cards_dropped += 1
-	spawn_card()
+		cards_dropped += 1
+		spawn_card()
 
 func _on_night_box_card_frame_dropped(isCorrect: bool) -> void:
 	if isCorrect:
 		night_score += 1
-	cards_dropped += 1
-	spawn_card()
+		cards_dropped += 1
+		spawn_card()

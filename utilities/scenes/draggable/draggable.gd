@@ -2,17 +2,19 @@ extends Area2D
 class_name Draggable
 
 @onready var rest_point: Vector2
+@onready var initial_rest_point: Vector2
 
 var isDragging = false
 var dropzone_nodes: Array[Node] = []
 var linked_dropzone: Dropzone
 
 func _ready():
+	initial_rest_point = global_position
 	reset()
 	dropzone_nodes = get_tree().get_nodes_in_group("dropzones")
 
 func reset():
-	rest_point = global_position
+	rest_point = initial_rest_point
 	linked_dropzone = null
 
 func _input_event(viewport, event, shape_idx):

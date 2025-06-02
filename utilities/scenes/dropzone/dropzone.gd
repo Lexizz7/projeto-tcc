@@ -22,6 +22,8 @@ func drop(draggable: Draggable, emitSignals: bool = false):
 func undrop(draggable: Draggable):
 	draggables_dropped = draggables_dropped.filter(
 		func(item):
+			if !item:
+				return
 			return item.get_rid() != draggable.get_rid()
 	)
 	draggable.reset()

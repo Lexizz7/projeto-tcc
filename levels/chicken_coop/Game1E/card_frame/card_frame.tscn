@@ -17,15 +17,11 @@ position = Vector2(0, -74)
 scale = Vector2(0.280001, 0.280001)
 texture = ExtResource("2_hmx12")
 
+[node name="Image" type="Sprite2D" parent="Draggable"]
+position = Vector2(-1.125, -12.3985)
+scale = Vector2(0.282637, 0.281926)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
 position = Vector2(-1, -0.499998)
 scale = Vector2(1.16371, 0.632022)
 shape = SubResource("RectangleShape2D_hmx12")
-
-[node name="Label" type="Label" parent="Draggable"]
-offset_left = -23.0
-offset_top = -18.0
-offset_right = 22.0
-offset_bottom = 5.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
