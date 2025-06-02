@@ -34,15 +34,6 @@ position = Vector2(-256, 179)
 [node name="SheepHorde5" parent="horde" instance=ExtResource("2_4cmge")]
 position = Vector2(260, 184)
 
-[node name="Label" type="Label" parent="."]
-offset_left = -501.0
-offset_top = -275.0
-offset_right = -461.0
-offset_bottom = -252.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "0"
-
 [node name="BackArrow" parent="." instance=ExtResource("4_hovlp")]
 position = Vector2(-507, 237)
 scale = Vector2(0.351519, 0.351519)

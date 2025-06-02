@@ -144,15 +144,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "0"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -539.0
-offset_top = -310.0
-offset_right = -499.0
-offset_bottom = -241.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "0"
-
 [connection signal="game_end" from="." to="thought_1" method="_on_game_game_end"]
 [connection signal="game_end" from="." to="thought_2" method="_on_game_game_end"]
 [connection signal="game_end" from="." to="thought_3" method="_on_game_game_end"]

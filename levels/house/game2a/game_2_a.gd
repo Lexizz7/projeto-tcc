@@ -3,7 +3,6 @@ extends Node2D
 const APPLE = preload("res://levels/house/game2a/apple/apple.tscn")
 signal game_end()
 @onready var apple_spawn_points: Node = $AppleSpawnPoints
-@onready var label: Label = $Label
 @onready var thought_baloons: Array[Node2D]= [
 	$thought_1,
 	$thought_2,
@@ -28,6 +27,9 @@ func spawnApples(n: int):
 		add_child(apple_instance)
 		
 func _randomize():
+	if round >= 20:
+		_game_finish()
+	round += 1
 	is_correct = 1
 	thought_baloons.shuffle()
 	var numbers = _number_generator(5)
@@ -49,10 +51,13 @@ func _ready():
 func _on_thought_node_clicked(node_name: String) -> void:
 	if get_node(node_name).get_node("Label").text == str(answer):
 		score += is_correct
-		label.text = str(score)
 		emit_signal("game_end")
 		_randomize()
 		return
 	thought_baloons[0].highlight_sprite()
 	is_correct = 0
 	
+func _game_finish():
+	var tree = get_tree()
+	if tree:
+		tree.change_scene_to_file("res://levels/house/house.tscn")

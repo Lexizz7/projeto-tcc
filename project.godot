@@ -15,6 +15,10 @@ run/main_scene="res://levels/farm/farm.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://utilities/scenes/music_manager/music_manager.tscn"
+
 [input]
 
 tap={

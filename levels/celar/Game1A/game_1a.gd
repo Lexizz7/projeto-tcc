@@ -3,7 +3,6 @@ extends Node2D
 const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
 
 @onready var feed_left: Label = $feed_left
-@onready var score_label: Label = $Score
 @onready var feed_spawn: Marker2D = $feed_spawn
 @onready var animals: Array[Node2D] = [
 	$Animal,
@@ -14,12 +13,17 @@ const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
 
 var total_feed = 0
 var score = 0
+var round = 0
 
 func _ready() -> void:
 	score = 0
+	round = 0
 	_setup()
 
 func _setup():
+	if round >= 10:
+		_game_finish()
+	round += 1
 	total_feed = 0
 	for animal in  animals:
 		animal.randomize()
@@ -50,7 +54,6 @@ func _verify():
 		is_correct = animal.is_fed()
 	if is_correct:
 		score += 1
-		score_label.text = str(score)
 	_setup()
 
 
@@ -60,3 +63,8 @@ func _on_animal_overfed() -> void:
 	feed_left.text = str(total_feed)
 	for animal in animals:
 		animal.on_overfed()
+
+func _game_finish():
+	var tree = get_tree()
+	if tree:
+		tree.change_scene_to_file("res://levels/celar/barn.tscn")
