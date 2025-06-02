@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b67tis5eucbwh"]
+
+[ext_resource type="Script" uid="uid://cu12hrvii43ay" path="res://utilities/scenes/audio_controller/audio_crontoller.gd" id="1_yjtp0"]
+
+[node name="AudioCrontoller" type="Node2D"]
+script = ExtResource("1_yjtp0")
+
+[node name="intro" type="AudioStreamPlayer2D" parent="."]
+
+[node name="on_mistake" type="AudioStreamPlayer2D" parent="."]
+
+[node name="on_succeed" type="AudioStreamPlayer2D" parent="."]
+
+[node name="on_game_end" type="AudioStreamPlayer2D" parent="."]
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
