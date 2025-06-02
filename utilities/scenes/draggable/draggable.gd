@@ -5,6 +5,7 @@ class_name Draggable
 @onready var initial_rest_point: Vector2
 
 var isDragging = false
+var isDisabled = false
 var dropzone_nodes: Array[Node] = []
 var linked_dropzone: Dropzone
 
@@ -18,6 +19,8 @@ func reset():
 	linked_dropzone = null
 
 func _input_event(viewport, event, shape_idx):
+	if isDisabled:
+		return
 	if event.is_action_pressed("tap"):
 		isDragging = true
 	if isDragging && event.is_action_released("tap"):

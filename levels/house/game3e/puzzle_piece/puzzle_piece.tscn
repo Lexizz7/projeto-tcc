@@ -16,6 +16,10 @@ script = ExtResource("1_mamka")
 scale = Vector2(0.171209, 0.171209)
 texture = ExtResource("2_mamka")
 
+[node name="Item" type="Sprite2D" parent="Draggable"]
+position = Vector2(5, -8)
+scale = Vector2(0.155, 0.155)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
 position = Vector2(9, 3)
 shape = SubResource("RectangleShape2D_2exq8")
