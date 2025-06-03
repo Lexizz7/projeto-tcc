@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 
 func _setup():
-	if round >= 10:
+	if round >= 5:
 		_game_finish()
 		return
 	round += 1
@@ -33,6 +33,7 @@ func _setup():
 		animal.randomize()
 		total_feed += animal.get_to_eat()
 	if on_enter:
+		on_enter = false
 		await audio_crontoller.play_and_wait("intro")
 	_spawn_feed()
 
