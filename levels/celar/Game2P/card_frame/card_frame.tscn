@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdelx73qgmjge"]
 
-[ext_resource type="Script" path="res://levels/chicken_coop/Game1E/card_frame/card_frame.gd" id="1_ehxun"]
+[ext_resource type="Script" path="res://levels/celar/Game2P/card_frame/card_frame.gd" id="1_b8irq"]
 [ext_resource type="PackedScene" uid="uid://dtlgrkau5ckeq" path="res://utilities/scenes/draggable/draggable.tscn" id="2_svcgx"]
 [ext_resource type="Texture2D" uid="uid://dri5cdbkrvtqh" path="res://levels/celar/Game2P/box/assets/pa_dir.png" id="3_rxuyy"]
 [ext_resource type="Texture2D" uid="uid://rb2ve6qkkj8o" path="res://levels/celar/Game2P/box/assets/escada_dir.png" id="4_0ilg0"]
@@ -11,30 +11,26 @@
 size = Vector2(106.556, 238.916)
 
 [node name="CardFrame" type="Node2D"]
-script = ExtResource("1_ehxun")
+script = ExtResource("1_b8irq")
 
 [node name="Draggable" parent="." instance=ExtResource("2_svcgx")]
 position = Vector2(0, -74)
 
 [node name="tool" type="Sprite2D" parent="Draggable"]
-visible = false
 scale = Vector2(0.280001, 0.280001)
 texture = ExtResource("3_rxuyy")
 
 [node name="tool2" type="Sprite2D" parent="Draggable"]
-visible = false
 position = Vector2(1.90735e-06, 1.90735e-06)
 scale = Vector2(0.28125, 0.262695)
 texture = ExtResource("4_0ilg0")
 
 [node name="tool3" type="Sprite2D" parent="Draggable"]
-visible = false
 position = Vector2(-7.5, -3)
 scale = Vector2(0.229492, 0.267578)
 texture = ExtResource("5_mpynu")
 
 [node name="tool4" type="Sprite2D" parent="Draggable"]
-visible = false
 position = Vector2(-23.5, -22.5)
 scale = Vector2(0.180664, 0.229492)
 texture = ExtResource("6_don15")

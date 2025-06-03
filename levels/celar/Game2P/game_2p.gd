@@ -27,14 +27,26 @@ func spawn_card():
 	
 	card_instance.visible = true
 
-func _on_day_box_card_frame_dropped(isCorrect: bool) -> void:
+func _on_tool1_box_card_frame_dropped(isCorrect: bool) -> void:
 	if isCorrect:
 		day_score += 1
 	cards_dropped += 1
 	spawn_card()
 
-func _on_night_box_card_frame_dropped(isCorrect: bool) -> void:
+func _on_tool2_box_card_frame_dropped(isCorrect: bool) -> void:
 	if isCorrect:
 		night_score += 1
+	cards_dropped += 1
+	spawn_card()
+	
+func _on_tool3_box_card_frame_dropped(isCorrect: bool) -> void:
+	if isCorrect:
+		day_score += 1
+	cards_dropped += 1
+	spawn_card()
+	
+func _on_tool4_box_card_frame_dropped(isCorrect: bool) -> void:
+	if isCorrect:
+		day_score += 1
 	cards_dropped += 1
 	spawn_card()

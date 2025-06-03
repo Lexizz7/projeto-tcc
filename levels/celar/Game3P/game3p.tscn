@@ -44,8 +44,8 @@ position = Vector2(254, 53)
 position = Vector2(490, 79)
 script = ExtResource("5_e7ybj")
 
-[connection signal="card_frame_dropped" from="Burro" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Cavalo" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Ovelha" to="." method="_on_night_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="OvelhaM" to="." method="_on_night_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Vaca" to="." method="_on_day_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Burro" to="." method="_on_animal1_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Cavalo" to="." method="_on_animal2_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Ovelha" to="." method="_on_animal3_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="OvelhaM" to="." method="_on_animal4_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Vaca" to="." method="_on_animal5_box_card_frame_dropped"]

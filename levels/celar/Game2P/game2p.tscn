@@ -38,7 +38,7 @@ position = Vector2(-199, -3)
 [node name="Garfo4" parent="." instance=ExtResource("7_woxfi")]
 position = Vector2(50, -11)
 
-[connection signal="card_frame_dropped" from="Pa" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Escada" to="." method="_on_night_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Garfo3" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Garfo4" to="." method="_on_day_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Pa" to="." method="_on_tool1_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Escada" to="." method="_on_tool2_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Garfo3" to="." method="_on_tool3_box_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Garfo4" to="." method="_on_tool4_box_card_frame_dropped"]
