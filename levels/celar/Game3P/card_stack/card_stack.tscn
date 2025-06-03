@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dktlnjwjuedl"]
+
+[ext_resource type="Script" path="res://levels/celar/Game3P/card_stack/card_stack.gd" id="1_bab4n"]
+[ext_resource type="Texture2D" uid="uid://cdqjudvclyui" path="res://levels/chicken_coop/Game1E/card_stack/assets/card_stack1.png" id="2_vnmwx"]
+[ext_resource type="Texture2D" uid="uid://px1prhxmrlaf" path="res://levels/chicken_coop/Game1E/card_stack/assets/card_stack2.png" id="3_5f4bx"]
+[ext_resource type="Texture2D" uid="uid://bptvgd2r161me" path="res://levels/chicken_coop/Game1E/card_stack/assets/card_stack3.png" id="4_7iqtj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpo54"]
+size = Vector2(163.806, 128.5)
+
+[node name="CardStack" type="Area2D"]
+script = ExtResource("1_bab4n")
+
+[node name="level1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.805878, 64.5)
+scale = Vector2(0.758824, 0.758824)
+texture = ExtResource("2_vnmwx")
+
+[node name="level2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2, 79)
+scale = Vector2(0.763977, 0.763977)
+texture = ExtResource("3_5f4bx")
+
+[node name="level3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.805878, 100.5)
+scale = Vector2(0.758824, 0.758824)
+texture = ExtResource("4_7iqtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.90294, 65.25)
+shape = SubResource("RectangleShape2D_cpo54")

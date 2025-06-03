@@ -1,17 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://btq0nmba8341k"]
+[gd_scene load_steps=12 format=3 uid="uid://btq0nmba8341k"]
 
 [ext_resource type="Texture2D" uid="uid://dj5r1rt1l7wao" path="res://levels/celar/assets/celar.png" id="1_okina"]
 [ext_resource type="PackedScene" uid="uid://cvwwjtyn0p2j8" path="res://characters/player/player.tscn" id="2_rraan"]
 [ext_resource type="PackedScene" uid="uid://filj2464bwfm" path="res://utilities/scenes/PlayerTransitionArea.tscn" id="3_vqeug"]
 [ext_resource type="Texture2D" uid="uid://d0h3g3tsbpv00" path="res://levels/celar/assets/feed-pile.png" id="4_fj6r4"]
+[ext_resource type="Texture2D" uid="uid://buinol5vlits6" path="res://levels/celar/assets/janela2.png" id="4_sdxwu"]
+[ext_resource type="Texture2D" uid="uid://da0jip7cna2p7" path="res://levels/celar/assets/ferramentas2.png" id="5_ly7a4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rqftb"]
-vertices = PackedVector2Array(-52.4531, 110.328, -36.6406, 115.438, -37.8516, 117.25, -68.1172, 132.383, -67.2578, 124.273, -101.648, 130.922, -107.258, 139.063, -140.281, 133.969, -173.094, 143.977, -187.008, 137.023, -226.406, 140.961, -233.117, 133.953, -271.258, 147.219, -259.68, 129.703, -345.906, 116.992, -288.977, 117.961, -313.594, 161, -363.32, 161, -375.602, 112.039, -400.133, 148.188, -396.898, 120.742, -403.758, 80.3906, -393.789, 76.5469)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 5, 6, 8), PackedInt32Array(9, 7, 8, 10), PackedInt32Array(11, 9, 10), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(14, 15, 13, 12, 16, 17), PackedInt32Array(18, 14, 17, 19, 20), PackedInt32Array(18, 20, 21, 22)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-407, 121, -411, 155, -365, 171, -312, 171, -269, 157, -226, 151, -173, 154, -106, 149, -65, 142, -31, 125, -21, 110, -55, 99, -72, 115, -103, 121, -141, 124, -187, 127, -232, 124, -257, 120, -287, 108, -345, 107, -369, 103, -389, 64, -415, 74)])
+vertices = PackedVector2Array(246.141, 271.992, 131.273, 271, 131.281, 271, 435.352, 189.297, 483.813, 194.438, 477.758, 206.969, 456.844, 214.5, 416.656, 226.563, 417.07, 200.617, 372.742, 225.367, 351.188, 253.328, 276.742, 249.883, 185.258, 259.023, 99.6484, 254.953, -9.92188, 267.023, 15.9766, 235.977, -52.4531, 110.328, -36.6406, 115.438, -37.8516, 117.25, -68.1172, 132.383, -67.2578, 124.273, -101.648, 130.922, -107.258, 139.063, -140.281, 133.969, -179.867, 144.477, -187.008, 137.023, 197.742, 121.367, 260.438, 126.023, 259.398, 129.156, 218.938, 163.18, 170.32, 158.258, 82.3828, 192.813, 131.227, 194.367, 16.0234, 219.969, -37.4922, 205, -396.898, 120.742, -403.758, 80.3906, -393.789, 76.5469, -375.602, 112.039, -363.32, 161, -400.133, 148.188, -345.906, 116.992, -313.594, 161, -267.172, 145.891, -288.977, 117.961, -259.68, 129.703, -142.609, 205, -138.82, 241.633, -233.117, 133.953, -184.594, 155.82)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8), PackedInt32Array(9, 8, 7, 10), PackedInt32Array(11, 9, 10, 0), PackedInt32Array(12, 11, 0, 2), PackedInt32Array(13, 12, 2, 14), PackedInt32Array(15, 13, 14), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 20, 19, 22), PackedInt32Array(23, 21, 22, 24), PackedInt32Array(25, 23, 24), PackedInt32Array(26, 27, 28, 29, 30), PackedInt32Array(31, 30, 29, 32, 33), PackedInt32Array(34, 31, 33), PackedInt32Array(35, 36, 37, 38, 39), PackedInt32Array(39, 40, 35), PackedInt32Array(39, 38, 41, 42), PackedInt32Array(43, 42, 41, 44, 45), PackedInt32Array(46, 47, 43, 45, 48, 49), PackedInt32Array(34, 33, 15, 14, 47, 46), PackedInt32Array(49, 48, 25, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-407, 121, -411, 155, -365, 171, -312, 171, -269, 157, -143, 251, -11, 277, 131, 281, 247, 282, 354, 263, 420, 236, 460, 224, 485, 215, 499, 186, 433, 179, 412, 192, 369, 216, 275, 240, 185, 249, 101, 245, 26, 228, 134, 204, 224, 172, 268, 135, 274, 117, 193, 111, 164, 150, 80, 183, -38, 195, -138, 195, -173, 154, -106, 149, -65, 142, -31, 125, -21, 110, -55, 99, -72, 115, -103, 121, -141, 124, -187, 127, -232, 124, -257, 120, -287, 108, -345, 107, -369, 103, -389, 64, -415, 74)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ah53u"]
 size = Vector2(907, 945)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wqox"]
+size = Vector2(942.779, 1829.1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgbsf"]
+size = Vector2(993.587, 1191.18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okina"]
 size = Vector2(303, 289)
@@ -39,6 +47,34 @@ texture = ExtResource("4_fj6r4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="feed_pile"]
 position = Vector2(11.5, 3.5)
 shape = SubResource("RectangleShape2D_ah53u")
+
+[node name="window" parent="." instance=ExtResource("3_vqeug")]
+position = Vector2(232, -32)
+scale = Vector2(0.177136, 0.177136)
+scenePath = "res://levels/celar/Game3P/game3p.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="window"]
+position = Vector2(33.8723, -399.616)
+scale = Vector2(3.27432, 3.20422)
+texture = ExtResource("4_sdxwu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="window"]
+position = Vector2(59.2765, -28.2269)
+shape = SubResource("RectangleShape2D_7wqox")
+
+[node name="tools" parent="." instance=ExtResource("3_vqeug")]
+position = Vector2(490, 56)
+scale = Vector2(0.177136, 0.177136)
+scenePath = "res://levels/celar/Game2P/game2p.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="tools"]
+position = Vector2(-95.9714, 141.135)
+scale = Vector2(1.07218, 1.28117)
+texture = ExtResource("5_ly7a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tools"]
+position = Vector2(-33.8723, 189.12)
+shape = SubResource("RectangleShape2D_rgbsf")
 
 [node name="Player" parent="." instance=ExtResource("2_rraan")]
 position = Vector2(-335, 145)

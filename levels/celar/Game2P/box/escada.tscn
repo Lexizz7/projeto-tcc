@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d28yg1xunvrr"]
+
+[ext_resource type="Script" path="res://levels/celar/Game2P/box/box.gd" id="1_imk3h"]
+[ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="2_rk4a7"]
+[ext_resource type="Texture2D" uid="uid://xsbnyylano2b" path="res://levels/celar/Game2P/box/assets/escada_esq.png" id="3_8qj4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stolk"]
+size = Vector2(87.1606, 38.4575)
+
+[node name="NightBox" type="Node2D"]
+script = ExtResource("1_imk3h")
+type = "night"
+
+[node name="Dropzone" parent="." instance=ExtResource("2_rk4a7")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Dropzone"]
+position = Vector2(0, -8.64038)
+scale = Vector2(0.223084, 0.262421)
+texture = ExtResource("3_8qj4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
+position = Vector2(-0.999999, -21.5)
+scale = Vector2(1.00963, 0.650068)
+shape = SubResource("RectangleShape2D_stolk")
+
+[connection signal="dropped" from="Dropzone" to="." method="_on_dropzone_dropped"]
