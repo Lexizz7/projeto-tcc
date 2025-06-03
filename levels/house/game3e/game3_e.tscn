@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://x51ixabpyfrg"]
+[gd_scene load_steps=7 format=3 uid="uid://x51ixabpyfrg"]
 
 [ext_resource type="Texture2D" uid="uid://dwqa7vhpx6654" path="res://levels/house/game3e/assets/game3e.png" id="1_doya8"]
 [ext_resource type="Script" uid="uid://de3c25xr7kjbg" path="res://levels/house/game3e/game_3_e.gd" id="1_urxam"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_hjjqd"]
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_gw7y5"]
+[ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="5_6b0b7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_urxam"]
 radius = 16.7984
@@ -41,6 +42,10 @@ position = Vector2(281, 0)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dropzone3"]
 scale = Vector2(6.62491, 6.62491)
 shape = SubResource("CircleShape2D_urxam")
+
+[node name="AudioCrontoller" parent="." instance=ExtResource("5_6b0b7")]
+introPath = "res://levels/house/game3e/sfx/g3s.wav"
+onGameEndPath = "res://levels/house/game3e/sfx/g3e.wav"
 
 [connection signal="dropped" from="Dropzone" to="." method="_on_dropzone_dropped"]
 [connection signal="dropped" from="Dropzone2" to="." method="_on_dropzone_dropped"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://uxh4ellquyfd"]
+[gd_scene load_steps=6 format=3 uid="uid://uxh4ellquyfd"]
 
 [ext_resource type="Script" uid="uid://dxu210nf0uadj" path="res://levels/farm/game3A/game_3a.gd" id="1_2e85b"]
 [ext_resource type="Texture2D" uid="uid://crmhe60rohyau" path="res://levels/farm/game3A/assets/game3A.png" id="1_qkui4"]
 [ext_resource type="PackedScene" uid="uid://t75uv1swo8ba" path="res://levels/farm/game3A/horde/sheep_horde.tscn" id="2_4cmge"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="4_hovlp"]
+[ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="5_div17"]
 
 [node name="Game3a" type="Node2D"]
 script = ExtResource("1_2e85b")
@@ -38,6 +39,10 @@ position = Vector2(260, 184)
 position = Vector2(-507, 237)
 scale = Vector2(0.351519, 0.351519)
 scenePath = "res://levels/farm/farm.tscn"
+
+[node name="AudioCrontoller" parent="." instance=ExtResource("5_div17")]
+introPath = "res://levels/farm/game3A/sfx/g3s.wav"
+onGameEndPath = "res://levels/farm/game3A/sfx/g3e.wav"
 
 [connection signal="game_end" from="." to="horde/SheepHorde" method="_on_game_end"]
 [connection signal="game_end" from="." to="horde/SheepHorde2" method="_on_game_end"]

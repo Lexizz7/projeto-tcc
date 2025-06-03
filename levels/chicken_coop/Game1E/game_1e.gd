@@ -4,6 +4,7 @@ const CARD_FRAME = preload("res://levels/chicken_coop/Game1E/card_frame/card_fra
 
 @onready var card_spawn_point: Marker2D = $CardSpawnPoint
 @onready var card_stack: Area2D = $CardStack
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 
 var day_score: int = 0
 var night_score: int = 0
@@ -11,6 +12,7 @@ var night_score: int = 0
 var cards_dropped = 0
 
 func _ready():
+	await audio_crontoller.play_and_wait("intro")
 	spawn_card()
 
 func spawn_card():
@@ -18,6 +20,7 @@ func spawn_card():
 		card_stack.level = 4
 		var tree = get_tree()
 		if tree:
+			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/chicken_coop/chicken_coop.tscn")
 		return
 	elif  cards_dropped > 7:

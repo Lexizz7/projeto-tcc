@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciq5rsuvk0t72"]
+[gd_scene load_steps=8 format=3 uid="uid://ciq5rsuvk0t72"]
 
 [ext_resource type="Script" uid="uid://ckldqex7t24ro" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
 [ext_resource type="Texture2D" uid="uid://ke7l36ekc7dk" path="res://levels/chicken_coop/Game1E/assets/game1e.png" id="2_unk5v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dabcu5hciojti" path="res://levels/chicken_coop/Game1E/box/day_box.tscn" id="4_ik08k"]
 [ext_resource type="PackedScene" uid="uid://bsdyoc26ce4tt" path="res://levels/chicken_coop/Game1E/box/night_box.tscn" id="5_unk5v"]
 [ext_resource type="PackedScene" uid="uid://bh22ri2lcdpkp" path="res://levels/chicken_coop/Game1E/card_stack/card_stack.tscn" id="6_sccsd"]
+[ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="7_4k4n5"]
 
 [node name="Game1e" type="Node2D"]
 script = ExtResource("1_t63wd")
@@ -35,6 +36,10 @@ scale = Vector2(1.62843, 1.62843)
 
 [node name="CardStack" parent="." instance=ExtResource("6_sccsd")]
 position = Vector2(182, -102)
+
+[node name="AudioCrontoller" parent="." instance=ExtResource("7_4k4n5")]
+introPath = "res://levels/chicken_coop/Game1E/sfx/g1s.wav"
+onGameEndPath = "res://levels/chicken_coop/Game1E/sfx/g1e.wav"
 
 [connection signal="card_frame_dropped" from="DayBox" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="NightBox" to="." method="_on_night_box_card_frame_dropped"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl8orj7sa4ybo"]
+[gd_scene load_steps=8 format=3 uid="uid://dl8orj7sa4ybo"]
 
 [ext_resource type="Script" uid="uid://dgoe1nrr2uef6" path="res://levels/farm/Game2E/game_2e.gd" id="1_57bqd"]
 [ext_resource type="Texture2D" uid="uid://bvncdr22rv1q3" path="res://levels/farm/Game2E/assets/game2e.png" id="1_mdh73"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_cmugq"]
 [ext_resource type="PackedScene" uid="uid://bc6ijrs31lyel" path="res://utilities/scenes/animated_node/animated_node.tscn" id="4_2bgv6"]
+[ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="5_vsy63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu242"]
 size = Vector2(283, 276)
@@ -52,6 +53,10 @@ scale = Vector2(0.311075, 0.311075)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item1/Area2D"]
 position = Vector2(7, 30)
 shape = SubResource("RectangleShape2D_vsy63")
+
+[node name="AudioCrontoller" parent="." instance=ExtResource("5_vsy63")]
+introPath = "res://levels/farm/Game2E/sfx/g2s.wav"
+onGameEndPath = "res://levels/farm/Game2E/sfx/g2e.wav"
 
 [connection signal="input_event" from="Item2/Area2D" to="." method="_on_item_2_input_event"]
 [connection signal="input_event" from="Item1/Area2D" to="." method="_on_item_1_input_event"]

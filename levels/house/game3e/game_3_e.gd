@@ -2,7 +2,9 @@ extends Node2D
 
 const PUZZLE_PIECE = preload("res://levels/house/game3e/puzzle_piece/puzzle_piece.tscn")
 
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 @onready var dropzones: Array[Dropzone]
+
 var pieces: Array[PuzzlePiece]
 var games := [1,2,3,4,5,6]
 
@@ -20,6 +22,7 @@ func spawnPieces():
 	if games.is_empty():
 		var tree = get_tree()
 		if tree:
+			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/house/house.tscn")
 		return
 	
@@ -53,6 +56,7 @@ func disablePieces():
 		piece.get_child(0).isDisabled = true
 
 func _ready() -> void:
+	await audio_crontoller.play_and_wait("intro")
 	setDropzones()
 	spawnPieces()
 
