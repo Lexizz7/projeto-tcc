@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpdfdaxjcw8n7"]
 
-[ext_resource type="Script" uid="uid://bh6wybyb24442" path="res://levels/celar/Game1A/game_1a.gd" id="1_aanxa"]
+[ext_resource type="Script" path="res://levels/celar/Game1A/game_1a.gd" id="1_aanxa"]
 [ext_resource type="Texture2D" uid="uid://b5h46xmvbgmek" path="res://levels/celar/Game1A/assets/game1a.png" id="1_hovqm"]
 [ext_resource type="PackedScene" uid="uid://bw1toul88pnyw" path="res://levels/celar/Game1A/animal/animal.tscn" id="2_0xweb"]
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_v6im3"]

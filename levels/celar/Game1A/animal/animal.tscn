@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bw1toul88pnyw"]
 
-[ext_resource type="Script" uid="uid://8qeqpgito0rd" path="res://levels/celar/Game1A/animal/animal.gd" id="1_0o8y0"]
+[ext_resource type="Script" path="res://levels/celar/Game1A/animal/animal.gd" id="1_0o8y0"]
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="1_amudd"]
 [ext_resource type="Texture2D" uid="uid://b111ixhpgvp4m" path="res://levels/celar/Game1A/animal/assets/sheep.png" id="2_b40wy"]
 [ext_resource type="Texture2D" uid="uid://b7yoollamcohe" path="res://levels/celar/Game1A/animal/assets/cow.png" id="3_0o8y0"]
