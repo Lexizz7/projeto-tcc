@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 MusicManager="*res://utilities/scenes/music_manager/music_manager.tscn"
 
-[display]
-
-window/stretch/mode="canvas_items"
-
 [input]
 
 tap={
@@ -34,4 +30,3 @@ tap={
 [rendering]
 
 renderer/rendering_method="mobile"
-textures/vram_compression/import_etc2_astc=true

@@ -8,6 +8,7 @@ signal game_end()
 	$thought_2,
 	$thought_3,
 ]
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 
 var answer = 0
 var score = 0
@@ -29,6 +30,7 @@ func spawnApples(n: int):
 func _randomize():
 	if round >= 20:
 		_game_finish()
+		return
 	round += 1
 	is_correct = 1
 	thought_baloons.shuffle()
@@ -45,6 +47,7 @@ func _number_generator(n: int):
 	return numbers.slice(0, 3)
 
 func _ready():
+	await audio_crontoller.play_and_wait("intro")
 	_randomize()
 
 
@@ -58,6 +61,7 @@ func _on_thought_node_clicked(node_name: String) -> void:
 	is_correct = 0
 	
 func _game_finish():
+	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:
 		tree.change_scene_to_file("res://levels/house/house.tscn")
