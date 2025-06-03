@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _randomize():
 	
-	if round >= 10:
+	if round >= 4:
 		_game_finish()
 		return
 	round += 1
