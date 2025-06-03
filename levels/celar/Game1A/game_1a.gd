@@ -1,7 +1,7 @@
 extends Node2D
 
 const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
-
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 @onready var feed_left: Label = $feed_left
 @onready var feed_spawn: Marker2D = $feed_spawn
 @onready var animals: Array[Node2D] = [
@@ -14,20 +14,27 @@ const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
 var total_feed = 0
 var score = 0
 var round = 0
+var on_enter = true
 
 func _ready() -> void:
+	on_enter = true
 	score = 0
 	round = 0
 	_setup()
+	
 
 func _setup():
-	if round >= 10:
+	if round >= 5:
 		_game_finish()
+		return
 	round += 1
 	total_feed = 0
 	for animal in  animals:
 		animal.randomize()
 		total_feed += animal.get_to_eat()
+	if on_enter:
+		on_enter = false
+		await audio_crontoller.play_and_wait("intro")
 	_spawn_feed()
 
 func _spawn_feed():
@@ -65,6 +72,7 @@ func _on_animal_overfed() -> void:
 		animal.on_overfed()
 
 func _game_finish():
+	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:
 		tree.change_scene_to_file("res://levels/celar/barn.tscn")

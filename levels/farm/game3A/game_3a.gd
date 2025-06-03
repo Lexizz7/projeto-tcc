@@ -1,6 +1,7 @@
 extends Node2D
 signal game_end
 const PAPER = preload("res://levels/farm/game3A/paper/paper.tscn")
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 @onready var number_spawn: Marker2D = $number_spawn
 @onready var horde: Node = $horde
 
@@ -19,10 +20,12 @@ var colors := [
 func _ready() -> void:
 	score = 0
 	round = 0
+	await audio_crontoller.play_and_wait("intro")
 	_randomize()
 
 func _randomize():
-	if round >= 10:
+	
+	if round >= 4:
 		_game_finish()
 		return
 	round += 1
@@ -70,6 +73,7 @@ func _number_generator(n: int):
 	return numbers.slice(0, 5)
 	
 func _game_finish():
+	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:
 		tree.change_scene_to_file("res://levels/farm/farm.tscn")

@@ -5,6 +5,7 @@ const SPRITE_PATH := "res://levels/farm/Game2E/assets/items/"
 
 @onready var item_1: Node2D = $Item1
 @onready var item_2: Node2D = $Item2
+@onready var audio_crontoller: Node2D = $AudioCrontoller
 
 var current_stage := {
 	"item1": "after",
@@ -43,6 +44,7 @@ func set_stage(index: int):
 		}
 
 func _ready() -> void:
+	await audio_crontoller.play_and_wait("intro")
 	set_stage(randi() % STAGE_COUNT)
 
 func on_input(item: String):
@@ -57,6 +59,7 @@ func on_input(item: String):
 	if count > 10:
 		var tree = get_tree()
 		if tree:
+			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/farm/farm.tscn")
 		return
 	
