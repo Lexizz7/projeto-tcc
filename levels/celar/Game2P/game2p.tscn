@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsvpjkmqape33"]
+[gd_scene load_steps=8 format=3 uid="uid://bsvpjkmqape33"]
 
 [ext_resource type="Script" path="res://levels/celar/Game2P/game_2p.gd" id="1_2sb8w"]
 [ext_resource type="Texture2D" uid="uid://b6uy0nc4cqfjc" path="res://levels/celar/Game2P/assets/caixas.png" id="2_18syt"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="3_kstoe"]
 [ext_resource type="PackedScene" uid="uid://d28lalfsdfiea" path="res://levels/celar/Game2P/box/pa.tscn" id="6_6mnfq"]
 [ext_resource type="PackedScene" uid="uid://nx6glnbt3evs" path="res://levels/celar/Game2P/box/garfo3.tscn" id="6_vu2tx"]
-[ext_resource type="PackedScene" uid="uid://bh22ri2lcdpkp" path="res://levels/chicken_coop/Game1E/card_stack/card_stack.tscn" id="6_xb5cd"]
 [ext_resource type="PackedScene" uid="uid://ovi2uu0w8ey8" path="res://levels/celar/Game2P/box/garfo4.tscn" id="7_woxfi"]
 [ext_resource type="PackedScene" uid="uid://d28yg1xunvrr" path="res://levels/celar/Game2P/box/escada.tscn" id="8_gvb5v"]
 
@@ -38,10 +37,6 @@ position = Vector2(-199, -3)
 
 [node name="Garfo4" parent="." instance=ExtResource("7_woxfi")]
 position = Vector2(50, -11)
-
-[node name="CardStack" parent="." instance=ExtResource("6_xb5cd")]
-visible = false
-position = Vector2(182, -102)
 
 [connection signal="card_frame_dropped" from="Pa" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Escada" to="." method="_on_night_box_card_frame_dropped"]

@@ -1,14 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbvjxj4x5i0mw"]
+[gd_scene load_steps=10 format=3 uid="uid://dbvjxj4x5i0mw"]
 
 [ext_resource type="Script" path="res://levels/celar/Game3P/game_3p.gd" id="1_mn8qi"]
 [ext_resource type="Texture2D" uid="uid://dys5aqili305" path="res://levels/celar/Game3P/assets/celeiro3.png" id="2_6no4v"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="3_0x7mp"]
-[ext_resource type="PackedScene" uid="uid://d28lalfsdfiea" path="res://levels/celar/Game2P/box/pa.tscn" id="4_1bwju"]
 [ext_resource type="Script" path="res://levels/celar/Game3P/box/box.gd" id="5_e7ybj"]
-[ext_resource type="PackedScene" uid="uid://d28yg1xunvrr" path="res://levels/celar/Game2P/box/escada.tscn" id="5_lbmep"]
-[ext_resource type="PackedScene" uid="uid://nx6glnbt3evs" path="res://levels/celar/Game2P/box/garfo3.tscn" id="6_impd8"]
-[ext_resource type="PackedScene" uid="uid://ovi2uu0w8ey8" path="res://levels/celar/Game2P/box/garfo4.tscn" id="7_caj3o"]
-[ext_resource type="PackedScene" uid="uid://bh22ri2lcdpkp" path="res://levels/chicken_coop/Game1E/card_stack/card_stack.tscn" id="8_68s3f"]
 [ext_resource type="PackedScene" uid="uid://cdce6cbf5be45" path="res://levels/celar/Game3P/box/burro.tscn" id="10_14do5"]
 [ext_resource type="PackedScene" uid="uid://dv2r78nkdirg2" path="res://levels/celar/Game3P/box/cavalo.tscn" id="11_rdj23"]
 [ext_resource type="PackedScene" uid="uid://dnwbmqhjehuc3" path="res://levels/celar/Game3P/box/ovelha.tscn" id="12_dk6vb"]
@@ -33,27 +28,6 @@ scenePath = "res://levels/celar/barn.tscn"
 [node name="CardSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, 251)
 
-[node name="Pa" parent="." instance=ExtResource("4_1bwju")]
-visible = false
-position = Vector2(-454, -20)
-script = ExtResource("5_e7ybj")
-
-[node name="Escada" parent="." instance=ExtResource("5_lbmep")]
-visible = false
-position = Vector2(351, -1)
-
-[node name="Garfo3" parent="." instance=ExtResource("6_impd8")]
-visible = false
-position = Vector2(-199, -3)
-
-[node name="Garfo4" parent="." instance=ExtResource("7_caj3o")]
-visible = false
-position = Vector2(50, -11)
-
-[node name="CardStack" parent="." instance=ExtResource("8_68s3f")]
-visible = false
-position = Vector2(182, -102)
-
 [node name="Burro" parent="." instance=ExtResource("10_14do5")]
 position = Vector2(12, 20)
 
@@ -68,11 +42,8 @@ position = Vector2(254, 53)
 
 [node name="Vaca" parent="." instance=ExtResource("14_e1qgr")]
 position = Vector2(490, 79)
+script = ExtResource("5_e7ybj")
 
-[connection signal="card_frame_dropped" from="Pa" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Escada" to="." method="_on_night_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Garfo3" to="." method="_on_day_box_card_frame_dropped"]
-[connection signal="card_frame_dropped" from="Garfo4" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Burro" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Cavalo" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Ovelha" to="." method="_on_night_box_card_frame_dropped"]
