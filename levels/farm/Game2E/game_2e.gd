@@ -12,6 +12,7 @@ var current_stage := {
 }
 
 var count := 0
+var disable_input := false
 
 func set_stage(index: int):
 	if index < 0 or index > STAGE_COUNT:
@@ -51,6 +52,7 @@ func on_input(item: String):
 		else:
 			item_2.shake()
 		return
+
 	count += 1
 	if count > 10:
 		var tree = get_tree()
@@ -63,13 +65,21 @@ func on_input(item: String):
 	set_stage(randi() % STAGE_COUNT)
 	
 	item_1.grow()
-	item_2.grow()
+	await item_2.grow()
 
 func _on_item_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if disable_input:
+		return
 	if event.is_action_pressed("tap"):
-		on_input("item1")
+		disable_input = true
+		await on_input("item1")
+		disable_input = false
 
 
 func _on_item_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if disable_input:
+		return
 	if event.is_action_pressed("tap"):
-		on_input("item2")
+		disable_input = true
+		await on_input("item2")
+		disable_input = false
