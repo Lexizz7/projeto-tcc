@@ -15,6 +15,9 @@ func _ready():
 
 func spawn_card():
 	if cards_dropped > 20:
+		var tree = get_tree()
+		if tree:
+			tree.change_scene_to_file("res://levels/celar/barn.tscn")
 		return
 	
 	var card_instance = CARD_FRAME.instantiate()

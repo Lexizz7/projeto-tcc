@@ -26,7 +26,10 @@ func _update_animal_visibility():
 		animal_sprites[i].visible = (i == (base % 5))
 
 func shrink_and_free():
-	var tween := get_tree().create_tween()
+	var tree = get_tree()
+	if !tree:
+		return
+	var tween := tree.create_tween()
 	tween.tween_property(draggable, "scale", Vector2.ZERO, 0.5)
 	await tween.finished
 	self.queue_free()
