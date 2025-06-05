@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ciq5rsuvk0t72"]
 
-[ext_resource type="Script" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
+[ext_resource type="Script" uid="uid://ckldqex7t24ro" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
 [ext_resource type="Texture2D" uid="uid://ke7l36ekc7dk" path="res://levels/chicken_coop/Game1E/assets/game1e.png" id="2_unk5v"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_ut8sb"]
 [ext_resource type="PackedScene" uid="uid://dabcu5hciojti" path="res://levels/chicken_coop/Game1E/box/day_box.tscn" id="4_ik08k"]
