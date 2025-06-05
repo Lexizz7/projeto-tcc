@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3wve8ai58fes"]
+
+[ext_resource type="Script" uid="uid://c556ibiet7v5j" path="res://levels/celar/Game2Pnew/card_frame/card_frame.gd" id="1_fv73x"]
+[ext_resource type="PackedScene" uid="uid://dtlgrkau5ckeq" path="res://utilities/scenes/draggable/draggable.tscn" id="2_c8qqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npvhu"]
+size = Vector2(123, 207.5)
+
+[node name="CardFrame" type="Node2D"]
+script = ExtResource("1_fv73x")
+
+[node name="Draggable" parent="." instance=ExtResource("2_c8qqc")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Draggable"]
+
+[node name="Image" type="Sprite2D" parent="Draggable"]
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+position = Vector2(-2.5, -33.75)
+shape = SubResource("RectangleShape2D_npvhu")

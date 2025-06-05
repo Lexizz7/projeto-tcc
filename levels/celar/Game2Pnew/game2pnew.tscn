@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8dxwrxqpnyiu"]
+
+[ext_resource type="Script" uid="uid://bftd3f2amifmc" path="res://levels/celar/Game2Pnew/game_2pnew.gd" id="1_n4l1p"]
+[ext_resource type="Texture2D" uid="uid://b6uy0nc4cqfjc" path="res://levels/celar/Game2Pnew/assets/caixas.png" id="2_2wny0"]
+[ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="3_ne1ux"]
+[ext_resource type="PackedScene" uid="uid://dkpu0h5xhc2af" path="res://levels/celar/Game2Pnew/box/escada.tscn" id="4_0vm30"]
+[ext_resource type="PackedScene" uid="uid://bku0mj0csilfy" path="res://levels/celar/Game2Pnew/box/garfo_3.tscn" id="6_1em1r"]
+[ext_resource type="PackedScene" uid="uid://c1ukhqpwxl2xl" path="res://levels/celar/Game2Pnew/box/garfo_4.tscn" id="7_ue7uq"]
+[ext_resource type="PackedScene" uid="uid://emjnukp5qli2" path="res://levels/celar/Game2Pnew/box/pa.tscn" id="8_ddujv"]
+
+[node name="Game2Pnew" type="Node2D"]
+script = ExtResource("1_n4l1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999985, 0)
+scale = Vector2(1.13086, 0.638672)
+texture = ExtResource("2_2wny0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CardSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-2, 236)
+
+[node name="BackArrow" parent="." instance=ExtResource("3_ne1ux")]
+position = Vector2(-499, 246)
+scale = Vector2(0.5, 0.5)
+scenePath = "res://levels/celar/barn.tscn"
+
+[node name="Escada" parent="." instance=ExtResource("4_0vm30")]
+position = Vector2(383, 12)
+type = "e"
+
+[node name="Garfo3" parent="." instance=ExtResource("6_1em1r")]
+position = Vector2(-195, 16)
+type = "g3"
+
+[node name="Garfo4" parent="." instance=ExtResource("7_ue7uq")]
+position = Vector2(50, 35)
+type = "g4"
+
+[node name="Pa" parent="." instance=ExtResource("8_ddujv")]
+position = Vector2(-440, 27)
+type = "p"
+
+[connection signal="card_frame_dropped" from="Escada" to="." method="_on_tool1_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Garfo3" to="." method="_on_tool2_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Garfo4" to="." method="_on_tool3_card_frame_dropped"]
+[connection signal="card_frame_dropped" from="Pa" to="." method="_on_tool4_card_frame_dropped"]
