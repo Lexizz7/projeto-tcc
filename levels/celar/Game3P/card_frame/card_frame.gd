@@ -11,6 +11,7 @@ var base = 0
 @onready var animal4: Sprite2D = $Draggable/animal4
 @onready var animal5: Sprite2D = $Draggable/animal5
 @onready var draggable: Area2D = $Draggable
+@onready var image: Sprite2D = $Draggable/animal1
 
 @onready var animal_sprites := [
 	$Draggable/animal1,
@@ -22,8 +23,22 @@ var base = 0
 
 func _ready() -> void:
 	randomize() 
-	base = randi() % 10
-	_update_animal_visibility()
+	
+	type = ["animal"].pick_random()
+	
+	var max_number = 5
+	var random_number = randi_range(1, max_number)
+
+	var texture_path = "res://levels/celar/Game3P/card_frame/assets/%s_%d.png" % [type, random_number]
+	
+	var texture = load(texture_path)
+	if texture:
+		image.texture = texture
+	else:
+		push_error("Failed to load texture at: " + texture_path)
+	
+	#base = randi() % 10
+	#_update_animal_visibility()
 	#teste = animal_sprites.pick_random().count
 	#label.text = type.to_upper()
 

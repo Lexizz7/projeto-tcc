@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bww44ei7od0sv"
-path="res://.godot/imported/ovelha_marrom_esq.png-216339ce4523a689832bc18d86e2ca3f.ctex"
+uid="uid://bscixp5vllnvr"
+path="res://.godot/imported/animal_5.png-f347a25fe124f13d778faf98aefd6a66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game3P/card_frame/assets/ovelha_marrom_esq.png"
-dest_files=["res://.godot/imported/ovelha_marrom_esq.png-216339ce4523a689832bc18d86e2ca3f.ctex"]
+source_file="res://levels/celar/Game3P/card_frame/assets/animal_5.png"
+dest_files=["res://.godot/imported/animal_5.png-f347a25fe124f13d778faf98aefd6a66.ctex"]
 
 [params]
 

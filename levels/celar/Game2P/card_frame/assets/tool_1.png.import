@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du5wcdnfxn86r"
-path="res://.godot/imported/ovelha_esq.png-dac8fbc52b8876c2db52d8f4a5bae70f.ctex"
+uid="uid://rb2ve6qkkj8o"
+path="res://.godot/imported/tool_1.png-c9d1b1546acc062abd7cd0d1cb49ec59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game3P/card_frame/assets/ovelha_esq.png"
-dest_files=["res://.godot/imported/ovelha_esq.png-dac8fbc52b8876c2db52d8f4a5bae70f.ctex"]
+source_file="res://levels/celar/Game2P/card_frame/assets/tool_1.png"
+dest_files=["res://.godot/imported/tool_1.png-c9d1b1546acc062abd7cd0d1cb49ec59.ctex"]
 
 [params]
 

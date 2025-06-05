@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgs0ucup5e8xe"
-path="res://.godot/imported/garfo3_dir.png-d06ceb205d41a40905b2356ba6a167cd.ctex"
+path="res://.godot/imported/tool_2.png-5726115f2ecdf657edbf3368d0991e5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game2P/box/assets/garfo3_dir.png"
-dest_files=["res://.godot/imported/garfo3_dir.png-d06ceb205d41a40905b2356ba6a167cd.ctex"]
+source_file="res://levels/celar/Game2P/card_frame/assets/tool_2.png"
+dest_files=["res://.godot/imported/tool_2.png-5726115f2ecdf657edbf3368d0991e5f.ctex"]
 
 [params]
 

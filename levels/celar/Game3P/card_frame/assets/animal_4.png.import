@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbccrrkbusvpm"
-path="res://.godot/imported/cavalo_esq.png-b3605f2e271b242b0cdb69953fb5487f.ctex"
+uid="uid://bww44ei7od0sv"
+path="res://.godot/imported/animal_4.png-fbd7aac2cc3af3cd5ead6d8e7d3f4923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game3P/card_frame/assets/cavalo_esq.png"
-dest_files=["res://.godot/imported/cavalo_esq.png-b3605f2e271b242b0cdb69953fb5487f.ctex"]
+source_file="res://levels/celar/Game3P/card_frame/assets/animal_4.png"
+dest_files=["res://.godot/imported/animal_4.png-fbd7aac2cc3af3cd5ead6d8e7d3f4923.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rb2ve6qkkj8o"
-path="res://.godot/imported/escada_dir.png-24a15cd907a309a9ec1a7e2e47a18397.ctex"
+uid="uid://ck53nrgw67050"
+path="res://.godot/imported/tool_3.png-33f7be53004f343de586b2f1c9ca3306.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game2P/box/assets/escada_dir.png"
-dest_files=["res://.godot/imported/escada_dir.png-24a15cd907a309a9ec1a7e2e47a18397.ctex"]
+source_file="res://levels/celar/Game2P/card_frame/assets/tool_3.png"
+dest_files=["res://.godot/imported/tool_3.png-33f7be53004f343de586b2f1c9ca3306.ctex"]
 
 [params]
 

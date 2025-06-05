@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck53nrgw67050"
-path="res://.godot/imported/garfo4_dir.png-5490762c3e9231e721bcb0a26f990a90.ctex"
+uid="uid://du5wcdnfxn86r"
+path="res://.godot/imported/animal_3.png-1f4c6bfdb7a04a125c57e4ad9110082e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game2P/box/assets/garfo4_dir.png"
-dest_files=["res://.godot/imported/garfo4_dir.png-5490762c3e9231e721bcb0a26f990a90.ctex"]
+source_file="res://levels/celar/Game3P/card_frame/assets/animal_3.png"
+dest_files=["res://.godot/imported/animal_3.png-1f4c6bfdb7a04a125c57e4ad9110082e.ctex"]
 
 [params]
 

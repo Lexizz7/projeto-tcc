@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7usl7s4x6kg4"
-path="res://.godot/imported/burro_esq.png-9274b7c5deda794234cfdb99a9c981ac.ctex"
+uid="uid://dri5cdbkrvtqh"
+path="res://.godot/imported/tool_4.png-0df48f5b80691f5803bcfe77b74f30a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/celar/Game3P/card_frame/assets/burro_esq.png"
-dest_files=["res://.godot/imported/burro_esq.png-9274b7c5deda794234cfdb99a9c981ac.ctex"]
+source_file="res://levels/celar/Game2P/card_frame/assets/tool_4.png"
+dest_files=["res://.godot/imported/tool_4.png-0df48f5b80691f5803bcfe77b74f30a6.ctex"]
 
 [params]
 

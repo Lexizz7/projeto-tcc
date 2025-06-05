@@ -9,6 +9,7 @@ var base = 0
 @onready var tool3: Sprite2D = $Draggable/tool3
 @onready var tool4: Sprite2D = $Draggable/tool4
 @onready var draggable: Area2D = $Draggable
+@onready var image: Sprite2D = $Draggable/tool
 
 @onready var animal_sprites := [
 	$Draggable/tool,
@@ -19,14 +20,28 @@ var base = 0
 
 func _ready() -> void:
 	randomize() 
-	base = randi() % 10
-	_update_animal_visibility()
-	type = animal_sprites.pick_random().name
+	
+	type = ["tool"].pick_random()
+	
+	var max_number = 4
+	var random_number = randi_range(1, max_number)
+
+	var texture_path = "res://levels/celar/Game2P/card_frame/assets/%s_%d.png" % [type, random_number]
+	
+	var texture = load(texture_path)
+	if texture:
+		image.texture = texture
+	else:
+		push_error("Failed to load texture at: " + texture_path)
+	
+	#base = randi() % 10
+	#_update_animal_visibility()
+	#type = animal_sprites.pick_random().name
 	#label.text = type.to_upper()
 
 func _update_animal_visibility():
 	for i in animal_sprites.size():
-		animal_sprites[i].visible = (i == (base % 4))
+		#animal_sprites[i].visible = (i == (base % 4))
 		if( base == 1):
 			tool.visible = true
 			tool2.visible = false
