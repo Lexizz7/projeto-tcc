@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_ah53u")
 [node name="window" parent="." instance=ExtResource("3_vqeug")]
 position = Vector2(232, -32)
 scale = Vector2(0.177136, 0.177136)
-scenePath = "res://levels/celar/Game3P/game3p.tscn"
+scenePath = "res://levels/celar/Game1Pnew/game1pnew.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="window"]
 position = Vector2(33.8723, -399.616)
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_7wqox")
 [node name="tools" parent="." instance=ExtResource("3_vqeug")]
 position = Vector2(490, 56)
 scale = Vector2(0.177136, 0.177136)
-scenePath = "res://levels/celar/Game2P/game2p.tscn"
+scenePath = "res://levels/celar/Game2Pnew/game2pnew.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="tools"]
 position = Vector2(-95.9714, 141.135)
