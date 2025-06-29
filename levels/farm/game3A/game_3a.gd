@@ -4,6 +4,7 @@ const PAPER = preload("res://levels/farm/game3A/paper/paper.tscn")
 @onready var audio_crontoller: Node2D = $AudioCrontoller
 @onready var number_spawn: Marker2D = $number_spawn
 @onready var horde: Node = $horde
+@onready var results_tracker: ResultTracker = $ResultsTracker
 
 var score = 0
 var round = 0
@@ -18,6 +19,7 @@ var colors := [
 	]
 	
 func _ready() -> void:
+	MetricsLogger.start_session("Game3A")
 	score = 0
 	round = 0
 	await audio_crontoller.play_and_wait("intro")
@@ -52,6 +54,10 @@ func _on_sheep_horde_paper_droped(answer: bool, number: String) -> void:
 		return
 	if !answer:
 		is_correct = false
+		results_tracker.add_miss()
+		MetricsLogger.log_event("WrongGroup", {
+			"isCorrect": false,
+		})
 		for group in horde.get_children():
 			if group.get_total_sheep() == number:
 				group.show_answer()
@@ -61,8 +67,13 @@ func _on_sheep_horde_paper_droped(answer: bool, number: String) -> void:
 
 func validate():
 	if is_correct:
+		print("hit")
 		score += 1
 	is_correct = true
+	results_tracker.add_hit()
+	MetricsLogger.log_event("CorrectGroup", {
+			"isCorrect": true,
+		})
 	emit_signal("game_end")
 	
 func _number_generator(n: int):
@@ -73,6 +84,7 @@ func _number_generator(n: int):
 	return numbers.slice(0, 5)
 	
 func _game_finish():
+	MetricsLogger.end_session()
 	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:

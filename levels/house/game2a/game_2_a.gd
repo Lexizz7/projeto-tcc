@@ -9,6 +9,7 @@ signal game_end()
 	$thought_3,
 ]
 @onready var audio_crontoller: Node2D = $AudioCrontoller
+@onready var results_tracker: ResultTracker = $ResultsTracker
 
 var answer = 0
 var score = 0
@@ -47,6 +48,7 @@ func _number_generator(n: int):
 	return numbers.slice(0, 3)
 
 func _ready():
+	MetricsLogger.start_session("Game2A")
 	await audio_crontoller.play_and_wait("intro")
 	_randomize()
 
@@ -54,13 +56,23 @@ func _ready():
 func _on_thought_node_clicked(node_name: String) -> void:
 	if get_node(node_name).get_node("Label").text == str(answer):
 		score += is_correct
+		results_tracker.add_hit()
+		MetricsLogger.log_event("CorrectNumber", {
+			"isCorrect": true,
+		})
 		emit_signal("game_end")
 		_randomize()
 		return
 	thought_baloons[0].highlight_sprite()
 	is_correct = 0
+	results_tracker.add_miss()
+	MetricsLogger.log_event("WrongNumber", {
+			"isCorrect": false,
+		})
+	
 	
 func _game_finish():
+	MetricsLogger.end_session()
 	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:

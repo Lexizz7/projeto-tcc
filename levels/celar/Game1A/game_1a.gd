@@ -10,6 +10,7 @@ const FEED_BAG = preload("res://levels/celar/Game1A/feed/feed.tscn")
 	$Animal3,
 ]
 @onready var feed_animation_mark: Marker2D = $feed_animation_mark
+@onready var results_tracker: ResultTracker = $ResultsTracker
 
 var total_feed = 0
 var score = 0
@@ -17,6 +18,7 @@ var round = 0
 var on_enter = true
 
 func _ready() -> void:
+	MetricsLogger.start_session("Game1A")
 	on_enter = true
 	score = 0
 	round = 0
@@ -60,18 +62,26 @@ func _verify():
 	for animal in  animals:
 		is_correct = animal.is_fed()
 	if is_correct:
-		score += 1
+		results_tracker.add_hit()
+		MetricsLogger.log_event("AnimalsFed", {
+			"isCorrect": true,
+		})
 	_setup()
 
 
 func _on_animal_overfed() -> void:
 	print("Overfed")
+	results_tracker.add_miss()
+	MetricsLogger.log_event("AnimalOverfed", {
+			"isCorrect": false,
+		})
 	total_feed += 1
 	feed_left.text = str(total_feed)
 	for animal in animals:
 		animal.on_overfed()
 
 func _game_finish():
+	MetricsLogger.end_session()
 	await audio_crontoller.play_and_wait("on_game_end")
 	var tree = get_tree()
 	if tree:

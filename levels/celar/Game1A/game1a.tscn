@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpdfdaxjcw8n7"]
+[gd_scene load_steps=9 format=3 uid="uid://bpdfdaxjcw8n7"]
 
 [ext_resource type="Script" uid="uid://bh6wybyb24442" path="res://levels/celar/Game1A/game_1a.gd" id="1_aanxa"]
 [ext_resource type="Texture2D" uid="uid://b5h46xmvbgmek" path="res://levels/celar/Game1A/assets/game1a.png" id="1_hovqm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_v6im3"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="4_rsuxh"]
 [ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="6_hte5p"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="7_j4qy7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hte5p"]
 
@@ -61,6 +62,9 @@ position = Vector2(2, 416)
 [node name="AudioCrontoller" parent="." instance=ExtResource("6_hte5p")]
 introPath = "res://levels/celar/Game1A/sfx/g1s.wav"
 onGameEndPath = "res://levels/celar/Game1A/sfx/g1e.wav"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("7_j4qy7")]
+position = Vector2(-518, -279)
 
 [connection signal="feed_droped" from="Animal" to="." method="_on_animal_feed_droped"]
 [connection signal="overfed" from="Animal" to="." method="_on_animal_overfed"]
