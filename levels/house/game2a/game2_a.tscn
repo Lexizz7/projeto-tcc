@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://djvbfn4660vsy"]
+[gd_scene load_steps=12 format=3 uid="uid://djvbfn4660vsy"]
 
 [ext_resource type="Texture2D" uid="uid://dnm6ea8vsnhrl" path="res://levels/house/game2a/assets/game2a.png" id="1_hn3xx"]
 [ext_resource type="Script" uid="uid://ca1pdkkva1mas" path="res://levels/house/game2a/game_2_a.gd" id="1_u0rq2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bviols4volsgn" path="res://levels/house/game2a/assets/thought.png" id="4_c1q33"]
 [ext_resource type="Texture2D" uid="uid://cb56yor7qsl1x" path="res://levels/house/game2a/assets/red circle.png" id="6_tpf86"]
 [ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="7_jlp3p"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="8_7o254"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dcq2"]
 
@@ -145,6 +146,9 @@ theme_override_font_sizes/font_size = 80
 [node name="AudioCrontoller" parent="." instance=ExtResource("7_jlp3p")]
 introPath = "res://levels/house/game2a/sfx/g2s.wav"
 onGameEndPath = "res://levels/house/game2a/sfx/g2e.wav"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("8_7o254")]
+position = Vector2(-532, -298)
 
 [connection signal="game_end" from="." to="thought_1" method="_on_game_game_end"]
 [connection signal="game_end" from="." to="thought_2" method="_on_game_game_end"]
