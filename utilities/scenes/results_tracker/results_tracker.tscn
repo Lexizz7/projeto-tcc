@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4pq7t17mvftu"]
+
+[ext_resource type="Script" uid="uid://tnyq5yc5wucd" path="res://utilities/scenes/results_tracker/results_tracker.gd" id="1_g40m1"]
+
+[node name="ResultsTracker" type="Node2D"]
+script = ExtResource("1_g40m1")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

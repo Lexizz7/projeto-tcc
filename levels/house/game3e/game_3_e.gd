@@ -4,6 +4,8 @@ const PUZZLE_PIECE = preload("res://levels/house/game3e/puzzle_piece/puzzle_piec
 
 @onready var audio_crontoller: Node2D = $AudioCrontoller
 @onready var dropzones: Array[Dropzone]
+@onready var results_tracker: ResultTracker = $ResultsTracker
+@onready var red_circles: Node = $RedCircles
 
 var pieces: Array[PuzzlePiece]
 var games := [1,2,3,4,5,6]
@@ -76,15 +78,19 @@ func _on_dropzone_dropped(
 			target_draggables.append(target)
 
 	source_dropzone.dropAll(target_draggables)
-
+	
+	_show_circles()
+	
 	if _is_puzzle_completed():
 		MetricsLogger.log_event("PieceMoved", {
 			"isCorrect": true,
 		})
+		results_tracker.add_hit()
 		disablePieces()
 		await get_tree().create_timer(0.5).timeout
 		spawnPieces()
 	else:
+		results_tracker.add_miss()
 		MetricsLogger.log_event("PieceMoved", {
 			"isCorrect": false,
 		})
@@ -97,3 +103,17 @@ func _is_puzzle_completed() -> bool:
 		if dropped_piece && dropped_piece.get_parent().index != i:
 			return false
 	return true
+	
+func _show_circles() -> void:
+	for i in range(dropzones.size()):
+		var circle: Node = red_circles.get_children()[i]
+		if !circle:
+			continue
+		if dropzones[i].draggables_dropped.size() == 0:
+			circle.show()
+			continue
+		var dropped_piece = dropzones[i].draggables_dropped[0]
+		if dropped_piece && dropped_piece.get_parent().index != i:
+			circle.show()
+			continue
+		circle.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciq5rsuvk0t72"]
+[gd_scene load_steps=10 format=3 uid="uid://ciq5rsuvk0t72"]
 
 [ext_resource type="Script" uid="uid://ckldqex7t24ro" path="res://levels/chicken_coop/Game1E/game_1e.gd" id="1_t63wd"]
 [ext_resource type="Texture2D" uid="uid://ke7l36ekc7dk" path="res://levels/chicken_coop/Game1E/assets/game1e.png" id="2_unk5v"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bsdyoc26ce4tt" path="res://levels/chicken_coop/Game1E/box/night_box.tscn" id="5_unk5v"]
 [ext_resource type="PackedScene" uid="uid://bh22ri2lcdpkp" path="res://levels/chicken_coop/Game1E/card_stack/card_stack.tscn" id="6_sccsd"]
 [ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="7_4k4n5"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="8_kbvbi"]
+[ext_resource type="Texture2D" uid="uid://yrugtcacbe6n" path="res://levels/chicken_coop/Game1E/assets/red circle.png" id="9_ntfr4"]
 
 [node name="Game1e" type="Node2D"]
 script = ExtResource("1_t63wd")
@@ -40,6 +42,23 @@ position = Vector2(182, -102)
 [node name="AudioCrontoller" parent="." instance=ExtResource("7_4k4n5")]
 introPath = "res://levels/chicken_coop/Game1E/sfx/g1s.wav"
 onGameEndPath = "res://levels/chicken_coop/Game1E/sfx/g1e.wav"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("8_kbvbi")]
+position = Vector2(-536, -293)
+
+[node name="RedCircles" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(-206, -68)
+scale = Vector2(0.487696, 0.487696)
+texture = ExtResource("9_ntfr4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(-1.00002, -53)
+scale = Vector2(0.487696, 0.487696)
+texture = ExtResource("9_ntfr4")
 
 [connection signal="card_frame_dropped" from="DayBox" to="." method="_on_day_box_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="NightBox" to="." method="_on_night_box_card_frame_dropped"]

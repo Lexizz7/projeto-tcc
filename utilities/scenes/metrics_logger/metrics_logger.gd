@@ -45,6 +45,8 @@ func start_session(name: String):
 	print("session %s started" % name)
 
 func log_event(name: String, extra_data := {}):
+	if !session_data:
+		return
 	session_data["events"].append({
 		"time": Time.get_unix_time_from_system() - start_time,
 		"event": name,
@@ -53,12 +55,16 @@ func log_event(name: String, extra_data := {}):
 	print("event %s logged" % name)
 
 func end_session():
+	if !session_data:
+		return
 	session_data["duration"] = Time.get_unix_time_from_system() - start_time
 	_save_json()
 	_save_xml()
 	print("session %s ended and files saved" % name)
 
 func _save_json():
+	if !session_data:
+		return
 	var folder_path = "user://metrics/%s" % player_id
 	var file_path = "%s/session_%s.json" % [folder_path, session_id]
 	var file := FileAccess.open(file_path, FileAccess.WRITE)
@@ -67,6 +73,8 @@ func _save_json():
 		file.close()
 
 func _save_xml():
+	if !session_data:
+		return
 	var folder_path = "user://metrics/%s" % player_id
 	var file_path = "%s/session_%s.xml" % [folder_path, session_id]
 	var xml_string = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<session>\n"

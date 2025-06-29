@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl8orj7sa4ybo"]
+[gd_scene load_steps=10 format=3 uid="uid://dl8orj7sa4ybo"]
 
 [ext_resource type="Script" uid="uid://dgoe1nrr2uef6" path="res://levels/farm/Game2E/game_2e.gd" id="1_57bqd"]
 [ext_resource type="Texture2D" uid="uid://bvncdr22rv1q3" path="res://levels/farm/Game2E/assets/game2e.png" id="1_mdh73"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_cmugq"]
 [ext_resource type="PackedScene" uid="uid://bc6ijrs31lyel" path="res://utilities/scenes/animated_node/animated_node.tscn" id="4_2bgv6"]
 [ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="5_vsy63"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="6_lu242"]
+[ext_resource type="Texture2D" uid="uid://bx0cuw7l2btnw" path="res://levels/farm/Game2E/assets/red circle.png" id="7_5go26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu242"]
 size = Vector2(283, 276)
@@ -57,6 +59,23 @@ shape = SubResource("RectangleShape2D_vsy63")
 [node name="AudioCrontoller" parent="." instance=ExtResource("5_vsy63")]
 introPath = "res://levels/farm/Game2E/sfx/g2s.wav"
 onGameEndPath = "res://levels/farm/Game2E/sfx/g2e.wav"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("6_lu242")]
+position = Vector2(-541, -292)
+
+[node name="RedCircles" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(-396, -41)
+scale = Vector2(0.803677, 0.803677)
+texture = ExtResource("7_5go26")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(311, -34)
+scale = Vector2(0.803677, 0.803677)
+texture = ExtResource("7_5go26")
 
 [connection signal="input_event" from="Item2/Area2D" to="." method="_on_item_2_input_event"]
 [connection signal="input_event" from="Item1/Area2D" to="." method="_on_item_1_input_event"]

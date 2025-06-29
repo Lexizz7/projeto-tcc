@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://x51ixabpyfrg"]
+[gd_scene load_steps=9 format=3 uid="uid://x51ixabpyfrg"]
 
 [ext_resource type="Texture2D" uid="uid://dwqa7vhpx6654" path="res://levels/house/game3e/assets/game3e.png" id="1_doya8"]
 [ext_resource type="Script" uid="uid://de3c25xr7kjbg" path="res://levels/house/game3e/game_3_e.gd" id="1_urxam"]
 [ext_resource type="PackedScene" uid="uid://w0qpaga3tw4k" path="res://utilities/scenes/back_arrow/BackArrow.tscn" id="2_hjjqd"]
 [ext_resource type="PackedScene" uid="uid://dw1p134307k5h" path="res://utilities/scenes/dropzone/dropzone.tscn" id="3_gw7y5"]
 [ext_resource type="PackedScene" uid="uid://b67tis5eucbwh" path="res://utilities/scenes/audio_controller/audio_crontoller.tscn" id="5_6b0b7"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="6_tc173"]
+[ext_resource type="Texture2D" uid="uid://ddfghtm3wbxn7" path="res://levels/house/game3e/assets/red circle.png" id="7_c7wuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_urxam"]
 radius = 16.7984
@@ -46,6 +48,28 @@ shape = SubResource("CircleShape2D_urxam")
 [node name="AudioCrontoller" parent="." instance=ExtResource("5_6b0b7")]
 introPath = "res://levels/house/game3e/sfx/g3s.wav"
 onGameEndPath = "res://levels/house/game3e/sfx/g3e.wav"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("6_tc173")]
+position = Vector2(-535, -285)
+
+[node name="RedCircles" type="Node" parent="."]
+
+[node name="Sprite2D1" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(-283, 2)
+scale = Vector2(0.7365, 0.7365)
+texture = ExtResource("7_c7wuq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RedCircles"]
+visible = false
+scale = Vector2(0.7365, 0.7365)
+texture = ExtResource("7_c7wuq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RedCircles"]
+visible = false
+position = Vector2(282, 2)
+scale = Vector2(0.7365, 0.7365)
+texture = ExtResource("7_c7wuq")
 
 [connection signal="dropped" from="Dropzone" to="." method="_on_dropzone_dropped"]
 [connection signal="dropped" from="Dropzone2" to="." method="_on_dropzone_dropped"]

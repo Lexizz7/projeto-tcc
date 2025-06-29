@@ -5,6 +5,8 @@ const CARD_FRAME = preload("res://levels/chicken_coop/Game1E/card_frame/card_fra
 @onready var card_spawn_point: Marker2D = $CardSpawnPoint
 @onready var card_stack: Area2D = $CardStack
 @onready var audio_crontoller: Node2D = $AudioCrontoller
+@onready var results_tracker: ResultTracker = $ResultsTracker
+@onready var red_circles: Node = $RedCircles
 
 var day_score: int = 0
 var night_score: int = 0
@@ -44,16 +46,38 @@ func _on_day_box_card_frame_dropped(isCorrect: bool) -> void:
 	MetricsLogger.log_event("DayBoxDropped", {
 		"isCorrect": isCorrect
 	})
+	_hide_all_circles()
 	if isCorrect:
+		results_tracker.add_hit()
 		day_score += 1
 		cards_dropped += 1
 		spawn_card()
+	else:
+		_show_circle(1)
+		results_tracker.add_miss()
 
 func _on_night_box_card_frame_dropped(isCorrect: bool) -> void:
 	MetricsLogger.log_event("NightBoxDropped", {
 		"isCorrect": isCorrect
 	})
+	_hide_all_circles()
 	if isCorrect:
+		results_tracker.add_hit()
 		night_score += 1
 		cards_dropped += 1
 		spawn_card()
+	else:
+		_show_circle(0)
+		results_tracker.add_miss()
+
+func _hide_all_circles():
+	for node in red_circles.get_children():
+		if !node:
+			continue
+		node.hide()
+
+func _show_circle(index: int):
+	var circle = red_circles.get_children()[index]
+	if !circle:
+		return
+	circle.show()
