@@ -45,22 +45,31 @@ func set_stage(index: int):
 
 func _ready() -> void:
 	await audio_crontoller.play_and_wait("intro")
+	MetricsLogger.start_session("Game2E")
 	set_stage(randi() % STAGE_COUNT)
 
 func on_input(item: String):
 	if current_stage[item] != "before":
+		MetricsLogger.log_event("%s tapped" % item, {
+			"isCorrect": false,
+		})
 		if item.contains('1'):
 			item_1.shake()
 		else:
 			item_2.shake()
 		return
-
+		
+	MetricsLogger.log_event("%s tapped" % item, {
+		"isCorrect": true,
+	})
+		
 	count += 1
 	if count > 10:
 		var tree = get_tree()
 		if tree:
 			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/farm/farm.tscn")
+			MetricsLogger.end_session()
 		return
 	
 	item_1.shrink()

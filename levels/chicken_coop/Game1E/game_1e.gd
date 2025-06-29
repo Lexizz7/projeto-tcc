@@ -13,6 +13,7 @@ var cards_dropped = 0
 
 func _ready():
 	await audio_crontoller.play_and_wait("intro")
+	MetricsLogger.start_session("Game1E")
 	spawn_card()
 
 func spawn_card():
@@ -22,6 +23,7 @@ func spawn_card():
 		if tree:
 			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/chicken_coop/chicken_coop.tscn")
+		MetricsLogger.end_session()
 		return
 	elif  cards_dropped > 7:
 		card_stack.level = 3
@@ -39,12 +41,18 @@ func spawn_card():
 	card_instance.visible = true
 
 func _on_day_box_card_frame_dropped(isCorrect: bool) -> void:
+	MetricsLogger.log_event("DayBoxDropped", {
+		"isCorrect": isCorrect
+	})
 	if isCorrect:
 		day_score += 1
 		cards_dropped += 1
 		spawn_card()
 
 func _on_night_box_card_frame_dropped(isCorrect: bool) -> void:
+	MetricsLogger.log_event("NightBoxDropped", {
+		"isCorrect": isCorrect
+	})
 	if isCorrect:
 		night_score += 1
 		cards_dropped += 1

@@ -12,6 +12,7 @@ func _input_event(viewport, event, shape_idx) -> void:
 		var tree = get_tree()
 		if tree and scenePath:
 			tree.change_scene_to_file(scenePath)
+			MetricsLogger.end_session()
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if !scenePath.is_absolute_path():

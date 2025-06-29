@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxwtwtcx2621b"]
+
+[ext_resource type="Script" uid="uid://dem8jnn8issjy" path="res://utilities/scenes/metrics_logger/metrics_logger.gd" id="1_ahtur"]
+
+[node name="MetricsLogger" type="Node2D"]
+script = ExtResource("1_ahtur")

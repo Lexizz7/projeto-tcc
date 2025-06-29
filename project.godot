@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MusicManager="*res://utilities/scenes/music_manager/music_manager.tscn"
+MetricsLogger="*res://utilities/scenes/metrics_logger/metrics_logger.tscn"
 
 [display]
 

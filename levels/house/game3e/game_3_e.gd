@@ -24,6 +24,7 @@ func spawnPieces():
 		if tree:
 			await audio_crontoller.play_and_wait("on_game_end")
 			tree.change_scene_to_file("res://levels/house/house.tscn")
+			MetricsLogger.end_session()
 		return
 	
 	var game = games.pick_random()
@@ -57,6 +58,7 @@ func disablePieces():
 
 func _ready() -> void:
 	await audio_crontoller.play_and_wait("intro")
+	MetricsLogger.start_session("Game3E")
 	setDropzones()
 	spawnPieces()
 
@@ -76,9 +78,16 @@ func _on_dropzone_dropped(
 	source_dropzone.dropAll(target_draggables)
 
 	if _is_puzzle_completed():
+		MetricsLogger.log_event("PieceMoved", {
+			"isCorrect": true,
+		})
 		disablePieces()
 		await get_tree().create_timer(0.5).timeout
 		spawnPieces()
+	else:
+		MetricsLogger.log_event("PieceMoved", {
+			"isCorrect": false,
+		})
 
 func _is_puzzle_completed() -> bool:
 	for i in range(dropzones.size()):
