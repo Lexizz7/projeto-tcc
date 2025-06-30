@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8dxwrxqpnyiu"]
+[gd_scene load_steps=9 format=3 uid="uid://b8dxwrxqpnyiu"]
 
 [ext_resource type="Script" uid="uid://bftd3f2amifmc" path="res://levels/celar/Game2Pnew/game_2pnew.gd" id="1_n4l1p"]
 [ext_resource type="Texture2D" uid="uid://b6uy0nc4cqfjc" path="res://levels/celar/Game2Pnew/assets/caixas.png" id="2_2wny0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bku0mj0csilfy" path="res://levels/celar/Game2Pnew/box/garfo_3.tscn" id="6_1em1r"]
 [ext_resource type="PackedScene" uid="uid://c1ukhqpwxl2xl" path="res://levels/celar/Game2Pnew/box/garfo_4.tscn" id="7_ue7uq"]
 [ext_resource type="PackedScene" uid="uid://emjnukp5qli2" path="res://levels/celar/Game2Pnew/box/pa.tscn" id="8_ddujv"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="8_n4l1p"]
 
 [node name="Game2Pnew" type="Node2D"]
 script = ExtResource("1_n4l1p")
@@ -41,6 +42,9 @@ type = "g4"
 [node name="Pa" parent="." instance=ExtResource("8_ddujv")]
 position = Vector2(-440, 27)
 type = "p"
+
+[node name="ResultsTracker" parent="." instance=ExtResource("8_n4l1p")]
+position = Vector2(440, -292)
 
 [connection signal="card_frame_dropped" from="Escada" to="." method="_on_tool1_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Garfo3" to="." method="_on_tool2_card_frame_dropped"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm5tx8oiet7d3"]
+[gd_scene load_steps=10 format=3 uid="uid://dm5tx8oiet7d3"]
 
 [ext_resource type="Script" uid="uid://o6g24oq0l2ag" path="res://levels/celar/Game1Pnew/game_1pnew.gd" id="1_kyqod"]
 [ext_resource type="Texture2D" uid="uid://dys5aqili305" path="res://levels/celar/Game1Pnew/assets/celeiro3.png" id="1_qja2f"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c5rqbprb1iby4" path="res://levels/celar/Game1Pnew/box/ovelha.tscn" id="6_bkmve"]
 [ext_resource type="PackedScene" uid="uid://2ioa7y0j7jb" path="res://levels/celar/Game1Pnew/box/ovelha_m.tscn" id="7_rt2yp"]
 [ext_resource type="PackedScene" uid="uid://ukyi5gysdj2o" path="res://levels/celar/Game1Pnew/box/vaca.tscn" id="8_dcbpm"]
+[ext_resource type="PackedScene" uid="uid://c4pq7t17mvftu" path="res://utilities/scenes/results_tracker/results_tracker.tscn" id="9_kyqod"]
 
 [node name="Game1Pnew" type="Node2D"]
 script = ExtResource("1_kyqod")
@@ -25,7 +26,7 @@ scale = Vector2(0.5, 0.5)
 scenePath = "res://levels/celar/barn.tscn"
 
 [node name="CardSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(-1, 253)
+position = Vector2(1, 219)
 
 [node name="Burro" parent="." instance=ExtResource("3_bgwlm")]
 position = Vector2(-1, 1)
@@ -41,6 +42,9 @@ position = Vector2(-236, 93)
 
 [node name="Vaca" parent="." instance=ExtResource("8_dcbpm")]
 position = Vector2(448, 80)
+
+[node name="ResultsTracker" parent="." instance=ExtResource("9_kyqod")]
+position = Vector2(446, -299)
 
 [connection signal="card_frame_dropped" from="Burro" to="." method="_on_animal1_card_frame_dropped"]
 [connection signal="card_frame_dropped" from="Cavalo" to="." method="_on_animal2_card_frame_dropped"]

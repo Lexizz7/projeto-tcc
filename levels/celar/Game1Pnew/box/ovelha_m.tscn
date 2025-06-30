@@ -14,8 +14,8 @@ type = "om"
 [node name="Dropzone" parent="." instance=ExtResource("2_dsvgw")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Dropzone"]
-position = Vector2(47, 1)
-scale = Vector2(0.880952, 0.793103)
+position = Vector2(59.375, -22)
+scale = Vector2(1.11667, 0.991379)
 texture = ExtResource("3_3yadj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dropzone"]
